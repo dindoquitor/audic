@@ -85,21 +85,25 @@ object YTPlayerUtils {
     private var cachedSignatureTimestamp: Int? = null
 
     
-    private val MAIN_CLIENT: YouTubeClient = ANDROID_VR_1_43_32
+    // IOS is the most reliable unauthenticated client — rarely blocked by YouTube
+    private val MAIN_CLIENT: YouTubeClient = IOS
 
     
     private val METADATA_CLIENT: YouTubeClient = WEB_REMIX
 
     private val STREAM_FALLBACK_CLIENTS: Array<YouTubeClient> = arrayOf(
+        // Best audio quality: non-adaptive bitrate, no AV1 stuttering
         ANDROID_VR_1_61_48,
+        ANDROID_VR_1_43_32,
+        // Web clients with PoToken support
         WEB_REMIX,
-        TVHTML5_SIMPLY_EMBEDDED_PLAYER,  
+        TVHTML5_SIMPLY_EMBEDDED_PLAYER,
         TVHTML5,
+        // More Android/iOS variants
         ANDROID_CREATOR,
         IPADOS,
         ANDROID_VR_NO_AUTH,
         MOBILE,
-        IOS,
         WEB,
         WEB_CREATOR
     )
@@ -221,16 +225,37 @@ object YTPlayerUtils {
             
             Timber.tag(logTag).d("Age-restricted detected, using WEB_CREATOR")
             Log.i(TAG, "Age-restricted: using WEB_CREATOR for videoId=$videoId")
-            val creatorResponse = YouTube.player(videoId, playlistId, WEB_CREATOR, null, null)
+            val creatorResponse = YouTube.player(videoId, playlistId, WEB_CREATOR, signatureTimestamp.timestamp, null)
                 .onFailure {
-                    // Distinguish thrown request/parse failures from genuine playability
-                    // rejections (both otherwise surface as a null response downstream).
                     Timber.tag(logTag).e(it, "player() request FAILED for WEB_CREATOR")
                 }.getOrNull()
             if (creatorResponse?.playabilityStatus?.status == "OK") {
                 Timber.tag(logTag).d("WEB_CREATOR works for age-restricted content")
                 mainPlayerResponse = creatorResponse
                 usedAgeRestrictedClient = WEB_CREATOR
+            }
+        }
+
+        // For guests (or if WEB_CREATOR failed), try multiple bypass approaches
+        // Different clients work on different devices due to TLS/network fingerprinting:
+        //   TVHTML5_SIMPLY (PS4) → works on emulators
+        //   ANDROID_VR_NO_AUTH (Oculus) → matches real Android fingerprint better
+        if (usedAgeRestrictedClient == null && isAgeRestrictedFromResponse) {
+            val bypassClients = listOf(
+                TVHTML5_SIMPLY_EMBEDDED_PLAYER to "TVHTML5_SIMPLY",
+                ANDROID_VR_NO_AUTH to "ANDROID_VR_NO_AUTH",
+            )
+            for ((client, name) in bypassClients) {
+                Timber.tag(logTag).d("Age-restricted: trying $name bypass for videoId=$videoId")
+                val response = YouTube.player(videoId, playlistId, client, signatureTimestamp.timestamp, null)
+                    .onFailure { Timber.tag(logTag).e(it, "player() request FAILED for $name") }
+                    .getOrNull()
+                if (response?.playabilityStatus?.status == "OK") {
+                    Timber.tag(logTag).d("$name works for age-restricted content")
+                    mainPlayerResponse = response
+                    usedAgeRestrictedClient = client
+                    break
+                }
             }
         }
 
