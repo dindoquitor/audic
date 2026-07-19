@@ -38,9 +38,9 @@ object Unison {
             }
 
             install(HttpTimeout) {
-                requestTimeoutMillis = 20000
-                connectTimeoutMillis = 15000
-                socketTimeoutMillis = 20000
+                requestTimeoutMillis = 8000
+                connectTimeoutMillis = 5000
+                socketTimeoutMillis = 8000
             }
 
             defaultRequest {

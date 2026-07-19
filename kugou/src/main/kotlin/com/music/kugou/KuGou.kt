@@ -8,6 +8,7 @@ import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.plugins.compression.ContentEncoding
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
+import io.ktor.client.plugins.HttpTimeout
 import io.ktor.client.request.get
 import io.ktor.client.request.parameter
 import io.ktor.http.ContentType
@@ -23,6 +24,12 @@ import kotlin.math.abs
 @OptIn(ExperimentalSerializationApi::class, ExperimentalEncodingApi::class)
 private val client = HttpClient {
     expectSuccess = true
+
+    install(HttpTimeout) {
+        requestTimeoutMillis = 10000
+        connectTimeoutMillis = 5000
+        socketTimeoutMillis = 10000
+    }
 
     install(ContentNegotiation) {
         val json = Json {

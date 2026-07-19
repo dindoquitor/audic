@@ -103,18 +103,14 @@ val ShowAudioFallbackToastKey = booleanPreferencesKey("show_audio_fallback_toast
 val AudioQualityKey = stringPreferencesKey("audioQuality")
 val IpVersionKey = stringPreferencesKey("ipVersion")
 
-const val LOSSLESS_ENABLED = true
-
 enum class AudioQuality {
     OPUS,
-    LOSSLESS,
 }
 
 val DownloadQualityKey = stringPreferencesKey("downloadQuality")
 
 enum class DownloadQuality {
     YOUTUBE,
-    LOSSLESS,
 }
 
 val AudioOffload = booleanPreferencesKey("enableOffload")

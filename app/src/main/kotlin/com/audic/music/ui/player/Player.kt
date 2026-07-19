@@ -2049,9 +2049,7 @@ fun BottomSheetPlayer(
                         } else if (localAudioFormat?.bitrate != null && localAudioFormat.bitrate > 0) {
                             bitrateStr = "${localAudioFormat.bitrate / 1000} kbps"
                         }
-                        val isLossless = codecStr.contains("FLAC") || codecStr.contains("ALAC") || codecStr.contains("WAV")
-                        val losslessStr = if (isLossless) "Lossless" else ""
-                        listOf(codecStr, bitrateStr, losslessStr).filter { it.isNotEmpty() }.joinToString(" • ")
+                        listOf(codecStr, bitrateStr).filter { it.isNotEmpty() }.joinToString(" • ")
                     }
 
                     val isBuffering = playbackState == androidx.media3.common.Player.STATE_BUFFERING
@@ -2890,7 +2888,6 @@ fun InlineLyricsView(
 
     LaunchedEffect(mediaMetadata?.id, currentLyrics) {
         if (mediaMetadata != null && currentLyrics == null) {
-            delay(500)
             coroutineScope.launch(Dispatchers.IO) {
                 try {
                     val existing = database.lyrics(mediaMetadata.id).firstOrNull()

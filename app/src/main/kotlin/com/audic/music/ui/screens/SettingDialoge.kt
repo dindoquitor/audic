@@ -157,25 +157,6 @@ fun SettingDialoge(
                                 }
                             )
                         )
-                        if (audioQuality == AudioQuality.LOSSLESS) {
-                            add(
-                                Material3SettingsItem(
-                                    title = { Text("Contribute in Lossless") },
-                                    customIcon = {
-                                        Text(
-                                            text = "HQ",
-                                            style = MaterialTheme.typography.titleMedium,
-                                            fontWeight = FontWeight.Bold,
-                                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                                        )
-                                    },
-                                    onClick = {
-                                        uriHandler.openUri("https://lossless.echomusic.fun")
-                                        onDismissRequest()
-                                    }
-                                )
-                            )
-                        }
                     }
                 )
 

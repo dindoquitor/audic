@@ -129,13 +129,6 @@ highlightKey: String? = null) {
                     AboutDivider()
                     AboutActionRow(
                         icon = painterResource(R.drawable.website),
-                        title = "Audic Lossless",
-                        subtitle = "lossless.echomusic.fun",
-                        onClick = { uriHandler.openUri("https://lossless.echomusic.fun/") },
-                    )
-                    AboutDivider()
-                    AboutActionRow(
-                        icon = painterResource(R.drawable.website),
                         title = "Audic Charts",
                         subtitle = "charts.echomusic.fun",
                         onClick = { uriHandler.openUri("https://charts.echomusic.fun/") },

@@ -2893,10 +2893,7 @@ class MusicService :
                 val isLosslessCache = dbFormat.codecs == "flac"
                 val isSaavnCache = dbFormat.codecs == "mp4a.40.2" || dbFormat.mimeType.contains("mp4", ignoreCase = true)
                 
-                val cacheMatchesTarget = when (lockedQuality) {
-                    com.audic.music.constants.AudioQuality.LOSSLESS -> isLosslessCache
-                    com.audic.music.constants.AudioQuality.OPUS -> !isLosslessCache && !isSaavnCache
-                }
+                val cacheMatchesTarget = !isLosslessCache && !isSaavnCache
                 
                 if (!cacheMatchesTarget) {
                     shouldBypassCache = true

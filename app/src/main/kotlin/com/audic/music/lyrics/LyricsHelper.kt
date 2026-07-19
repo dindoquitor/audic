@@ -24,6 +24,7 @@ import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withTimeoutOrNull
 import javax.inject.Inject
 
 class LyricsHelper
@@ -105,23 +106,29 @@ constructor(
                 }
             }
 
-            var responses = 0
-            val receivedUnsynced = mutableListOf<LyricsWithProvider>()
+            // Global timeout: if no synced result arrives within 8 seconds,
+            // return the best unsynced result or LYRICS_NOT_FOUND
+            val result = withTimeoutOrNull(RACE_TIMEOUT_MS) {
+                var responses = 0
+                val receivedUnsynced = mutableListOf<LyricsWithProvider>()
 
-            while (responses < providers.size) {
-                val result = channel.receive()
-                responses++
-                if (result != null) {
-                    val isSynced = result.lyrics.trimStart().startsWith("[")
-                    if (isSynced) {
-                        coroutineContext.cancelChildren()
-                        return@coroutineScope result
-                    } else {
-                        receivedUnsynced.add(result)
+                while (responses < providers.size) {
+                    val res = channel.receive()
+                    responses++
+                    if (res != null) {
+                        val isSynced = res.lyrics.trimStart().startsWith("[")
+                        if (isSynced) {
+                            coroutineContext.cancelChildren()
+                            return@withTimeoutOrNull res
+                        } else {
+                            receivedUnsynced.add(res)
+                        }
                     }
                 }
+                receivedUnsynced.firstOrNull() ?: LyricsWithProvider(LYRICS_NOT_FOUND, "Unknown")
             }
-            return@coroutineScope receivedUnsynced.firstOrNull() ?: LyricsWithProvider(LYRICS_NOT_FOUND, "Unknown")
+
+            result ?: LyricsWithProvider(LYRICS_NOT_FOUND, "Unknown")
         }
     }
 
@@ -185,6 +192,7 @@ constructor(
 
     companion object {
         private const val MAX_CACHE_SIZE = 3
+        private const val RACE_TIMEOUT_MS = 8000L
     }
 }
 
