@@ -1,0 +1,45 @@
+# Gradle
+.gradle/
+build/
+*/build/
+!build/
+*/build/**
+
+# IDE
+.idea/
+*.iml
+*.iws
+
+# Android
+local.properties
+app/google-services.json
+*.keystore
+*.jks
+app/keystore/
+
+# Signing credentials (use gradle.properties.template as a starting point)
+gradle.properties
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Build outputs
+*.apk
+*.aab
+*.ap_
+
+# Native build
+.externalNativeBuild/
+.cxx/
+
+# Firebase / Google Services
+**/google-services.json
+
+# Misc
+*.log
+*.hprof
+captures/
+.claude
+CLAUDE.md
