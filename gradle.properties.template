@@ -25,8 +25,9 @@ org.gradle.parallel=true
 org.gradle.daemon=true
 org.gradle.configureondemand=false
 
-# Suppress deprecated warnings
+# Suppress deprecated warnings / ABI warnings
 android.suppressUnsupportedOptionWarnings=android.suppressUnsupportedOptionWarnings,android.nonFinalResIds
+android.sync.suppressAgpWarnings=DEPRECATED_DSL,UNSUPPORTED_PROJECT_OPTION_USE,CANNOT_BUILD_SELECTED_TARGET_ABI
 
 # Increase timeouts for JitPack downloads (fixes timeout issues with NewPipeExtractor)
 systemProp.org.gradle.internal.http.connectionTimeout=180000
