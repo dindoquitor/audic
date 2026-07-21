@@ -185,6 +185,26 @@ android {
         generateLocaleConfig = true
     }
 
+afterEvaluate {
+    tasks.matching { it.name.startsWith("assemble") && it.name.endsWith("Release") }.configureEach {
+        doLast {
+            val versionName = android.defaultConfig.versionName
+            val buildDir = layout.buildDirectory.get().asFile
+            fileTree(buildDir).apply {
+                include("**/outputs/apk/**/*.apk")
+                exclude("**/*unsigned*", "**/*unaligned*")
+            }.forEach { apk ->
+                val parts = apk.parentFile.parent?.let { File(it) }?.name
+                val buildType = apk.parentFile.name
+                if (parts != null && buildType == "release") {
+                    val newName = "Audic-${versionName}-${parts}-${buildType}.apk"
+                    apk.renameTo(File(apk.parentFile, newName))
+                }
+            }
+        }
+    }
+}
+
     packaging {
         jniLibs {
             useLegacyPackaging = true
