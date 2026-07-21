@@ -180,11 +180,6 @@ class App : Application(), SingletonImageLoader.Factory {
                 }
         }
 
-        com.music.audic.utils.lastfm.LastFM.initialize(
-            apiKey = BuildConfig.LASTFM_API_KEY.takeIf { it.isNotEmpty() } ?: "",
-            secret = BuildConfig.LASTFM_SECRET.takeIf { it.isNotEmpty() } ?: "",
-        )
-
         applicationScope.launch(Dispatchers.IO) {
             dataStore.data
                 .map { it[DataSyncIdKey] }

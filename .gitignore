@@ -37,6 +37,10 @@ Desktop.ini
 # Firebase / Google Services
 **/google-services.json
 
+# Secrets (sensitive — never commit)
+secrets.properties
+**/assets/po_token.html
+
 # Misc
 *.log
 *.hprof

@@ -101,7 +101,6 @@ object LastFM {
                 secret = SECRET,
                 extra = mapOf("username" to username, "password" to password)
             )
-            parameter("format", "json")
         }
 
         val responseText = response.bodyAsText()
@@ -134,7 +133,6 @@ object LastFM {
                     duration?.let { put("duration", it.toString()) }
                 }
             )
-            parameter("format", "json")
         }
     }
 
@@ -157,7 +155,6 @@ object LastFM {
                     duration?.let { put("duration[0]", it.toString()) }
                 }
             )
-            parameter("format", "json")
         }
     }
 
@@ -177,18 +174,15 @@ object LastFM {
                     put("track", track)
                 }
             )
-            parameter("format", "json")
         }
     }
 
-    // API keys passed from the app module (loaded from BuildConfig/GitHub Secrets)
-    private var API_KEY = ""
-    private var SECRET = ""
+    // API keys from BuildConfig (set via local.properties or env var)
+    private var API_KEY = com.audic.music.BuildConfig.LASTFM_API_KEY
+    private var SECRET = com.audic.music.BuildConfig.LASTFM_SECRET
 
     /**
-     * Initialize LastFM with API credentials
-     * @param apiKey LastFM API key
-     * @param secret LastFM secret key
+     * Initialize LastFM with API credentials. Only needed if overriding BuildConfig values.
      */
     fun initialize(apiKey: String, secret: String) {
         API_KEY = apiKey

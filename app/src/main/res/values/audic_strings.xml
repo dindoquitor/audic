@@ -380,6 +380,10 @@
     <string name="lastfm_now_playing">Send Now Playing</string>
     <string name="last_fm_send_likes">Send Likes/Unlikes</string>
     <string name="last_fm_send_likes_description">Love/Unlove songs in Last.fm when they are Liked/Unliked in audicmusic</string>
+    <string name="lastfm_api_key">Last.fm API Key</string>
+    <string name="lastfm_api_secret">Last.fm API Secret</string>
+    <string name="lastfm_api_credentials">API Credentials</string>
+    <string name="lastfm_api_description">Get your API key and secret from last.fm/api</string>
     <string name="logging_in">Logging in…</string>
 
     <string name="scrobbling_configuration">Scrobbling Configuration</string>

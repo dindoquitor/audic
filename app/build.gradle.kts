@@ -39,12 +39,15 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
 
-        // LastFM API keys from GitHub Secrets
-        val lastFmKey = localProperties.getProperty("LASTFM_API_KEY") ?: System.getenv("LASTFM_API_KEY") ?: ""
-        val lastFmSecret = localProperties.getProperty("LASTFM_SECRET") ?: System.getenv("LASTFM_SECRET") ?: ""
+        // Google API key — never hardcoded, read from local.properties or env
+        val googleApiKey = localProperties.getProperty("GOOGLE_API_KEY") ?: System.getenv("GOOGLE_API_KEY") ?: ""
+        buildConfigField("String", "GOOGLE_API_KEY", "\"$googleApiKey\"")
 
-        buildConfigField("String", "LASTFM_API_KEY", "\"$lastFmKey\"")
-        buildConfigField("String", "LASTFM_SECRET", "\"$lastFmSecret\"")
+        // Last.fm API credentials — never hardcoded, read from local.properties or env
+        val lastfmApiKey = localProperties.getProperty("LASTFM_API_KEY") ?: System.getenv("LASTFM_API_KEY") ?: ""
+        val lastfmSecret = localProperties.getProperty("LASTFM_SECRET") ?: System.getenv("LASTFM_SECRET") ?: ""
+        buildConfigField("String", "LASTFM_API_KEY", "\"$lastfmApiKey\"")
+        buildConfigField("String", "LASTFM_SECRET", "\"$lastfmSecret\"")
 
         buildConfigField("String", "FLOW_NEURO_BASE_URL", project.findProperty("FLOW_NEURO_BASE_URL")?.toString()?.let { "\"$it\"" } ?: "\"https://api.flowneuroengine.com\"")
         buildConfigField("String", "FLOW_NEURO_API_KEY", project.findProperty("FLOW_NEURO_API_KEY")?.toString()?.let { "\"$it\"" } ?: "\"\"")

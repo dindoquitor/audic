@@ -570,7 +570,22 @@ class MusicService :
             dataStore.data.map { it[LastFMSessionKey] }.distinctUntilChanged().collect { sessionKey ->
                 com.music.audic.utils.lastfm.LastFM.sessionKey = sessionKey
             }
-        }        
+        }
+        scope.launch {
+            dataStore.data.map { it[ScrobbleDelayPercentKey] ?: 0.5f }.distinctUntilChanged().collect {
+                scrobbleManager?.scrobbleDelayPercent = it
+            }
+        }
+        scope.launch {
+            dataStore.data.map { it[ScrobbleMinSongDurationKey] ?: 30 }.distinctUntilChanged().collect {
+                scrobbleManager?.minSongDuration = it
+            }
+        }
+        scope.launch {
+            dataStore.data.map { it[ScrobbleDelaySecondsKey] ?: 50 }.distinctUntilChanged().collect {
+                scrobbleManager?.scrobbleDelaySeconds = it
+            }
+        }
         
 
         try {
