@@ -3,15 +3,14 @@
 
   <h1>Audic Music</h1>
 
-  <p><strong>A modern Android music app with ad-free streaming, synced lyrics, offline playback, and an intuitive user experience.
-</strong></p>
+  <p><strong>An ad-free Android music player with real-time synced lyrics, offline downloads, and audio recognition.</strong></p>
 </div>
 
 ---
 
 ## Overview
 
-Audic Music delivers a seamless, premium listening experience by leveraging YouTube Music's vast library — without the ads. It adds powerful extras including offline downloads, real-time synchronized lyrics, and environment-aware music recognition.
+Audic Music is an ad-free music player with offline downloads, real-time synchronized lyrics, environment-aware music recognition, and on-device AI recommendations.
 
 ---
 
@@ -22,7 +21,7 @@ Audic Music delivers a seamless, premium listening experience by leveraging YouT
 - [Features](#features)
   - [What's New](#whats-new)
   - [Streaming & Playback](#streaming--playback)
-  - [Discovery & Echo Find](#discovery--echo-find)
+  - [Discovery](#discovery)
   - [Lyrics](#lyrics)
   - [Integrations](#integrations)
   - [Smart Playback](#smart-playback)
@@ -30,12 +29,7 @@ Audic Music delivers a seamless, premium listening experience by leveraging YouT
 - [Installation & Setup](#installation--setup)
   - [Android Installation](#android-installation)
   - [Building from Source](#building-from-source)
-- [Translations](#translations)
-- [Community & Support](#community--support)
-- [Support the Project](#support-the-project)
-  - [Cryptocurrency](#cryptocurrency)
 - [Special Thanks](#special-thanks)
-- [Star History](#star-history)
 
 ---
 
@@ -95,18 +89,19 @@ Audic Music delivers a seamless, premium listening experience by leveraging YouT
 - **Canvas Animations** — Visual animations while playing music.
 
 ### Discovery
-- **Find** — Identify songs playing around you using advanced audio recognition.
-- **Brain** — An intelligent, on-device engine that analyzes your listening momentum and auto-injects perfectly aligned tracks into your queue.
+- **Echo Find** — Identify songs playing around you using advanced audio recognition.
+- **Echo Brain** — On-device AI that analyzes your listening momentum and auto-injects aligned tracks into your queue.
 - **Smart Recommendations** — Personalized suggestions based on your listening history.
-- **Comprehensive Browsing** — Explore Charts, Podcasts, Moods, and Genres.
+- **Comprehensive Browsing** — Explore charts, podcasts, moods, and genres.
 
 ### Lyrics
 - **Multiple Lyric Animations** — Choose from various lyric display styles.
 - **Word-by-Word Lyrics** — Precise per-word synchronization.
-- **Lyrics+** — New lyrics provider for improved accuracy and coverage.
-- **AI Translation** — Built-in Google Translate integration for lyrics in any language.
+- **Lyrics+** — Multiple providers for improved accuracy and coverage.
+- **AI Translation** — Built-in translation integration for lyrics in any language.
 
 ### Integrations
+- **Last.fm Scrobbling** — Automatically scrobble plays to your Last.fm account.
 - **Music Sharing via Odesli** — Share songs as Song.link for cross-platform listening.
 - **Set as Ringtone** — Directly set any song as your device ringtone.
 
@@ -120,7 +115,7 @@ Audic Music delivers a seamless, premium listening experience by leveraging YouT
 - **Hide Player Thumbnail** — Keep the player minimal without album art.
 - **Crop Album Art** — Adjust album art display to fit your style.
 - **Hide Video Songs** — Filter out video content from your feed.
-- **Hide YouTube Shorts** — Keep Shorts out of your music browsing.
+- **Hide Shorts** — Keep short-form video content out of your music browsing.
 
 ---
 
@@ -128,35 +123,48 @@ Audic Music delivers a seamless, premium listening experience by leveraging YouT
 
 ### Android Installation
 
-Download the latest pre-compiled APK from the Releases Page.
+Download the latest pre-compiled APK from the [Releases Page](https://github.com/dindoquitor/audic/releases).
 
 ### Building from Source
 
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/dindoquitor/audic.git
-   cd Echo-Music
+   cd audic
    ```
 
 2. **Configure Android SDK**
-   Create a `local.properties` file:
+   Copy the template and set your SDK path:
    ```bash
-   echo "sdk.dir=/path/to/your/android/sdk" > local.properties
+   cp local.properties.template local.properties
    ```
-   *(For detailed paths on Windows/macOS/Linux, refer to [SETUP.md](SETUP.md))*
+   Then edit `local.properties` and point `sdk.dir` to your Android SDK:
+
+   | OS | Typical path |
+   | :--- | :--- |
+   | macOS | `/Users/username/Library/Android/sdk` |
+   | Linux | `/home/username/Android/sdk` |
+   | Windows | `C:\\Users\\username\\AppData\\Local\\Android\\sdk` |
+
+   If you need a Google API key and Last.fm API credentials, add them to the same file:
+   ```properties
+   GOOGLE_API_KEY=your_key_here
+   LASTFM_API_KEY=your_key_here
+   LASTFM_SECRET=your_secret_here
+   ```
+   *(See [SETUP.md](SETUP.md) for more details.)*
 
 3. **Firebase Configuration (Optional)**
    Firebase is required for analytics and crash reporting. See the instructions in [SETUP.md](SETUP.md#3-configure-firebase-optional) for adding your `google-services.json`.
 
 4. **Build the Application**
    Audic Music has two build variants: **FOSS** (without Google Play Services / Cast) and **GMS** (with Cast support).
-   
-   To build the FOSS Universal Debug variant:
+
    ```bash
+   # FOSS Universal Debug
    ./gradlew assembleUniversalFossDebug
-   ```
-   To build the GMS Universal Debug variant:
-   ```bash
+
+   # GMS Universal Debug
    ./gradlew assembleUniversalGmsDebug
    ```
    *(For optimized ARM64 builds, release builds, or other options, refer to [SETUP.md](SETUP.md))*
@@ -165,18 +173,18 @@ Download the latest pre-compiled APK from the Releases Page.
 
 ## Special Thanks
 
-Audic Music stands on the shoulders of several excellent open-source projects. Sincere thanks to:
+Audic Music stands on the shoulders of several excellent open-source projects:
 
 | Project | Description |
-| :--- | :--- |
+| :------ | :---------- |
 | [Metrolist](https://github.com/MetrolistGroup/Metrolist) & [Vivi Music](https://github.com/vivizzz007/vivi-music) | Foundational inspiration and architecture reference |
 | [ArchiveTune](https://github.com/koiverse/ArchiveTune) | Material You UI inspiration |
 | [Better Lyrics](https://better-lyrics.boidu.dev/) | Lyrics enhancement and synchronization |
 | [SimpMusic](https://github.com/maxrave-dev/SimpMusic) | Lyrics implementation reference |
 | [Music Recognizer](https://github.com/aleksey-saenko/MusicRecognizer) | Audio recognition (Echo Find) |
 | [Flow](https://github.com/a-edev/Flow) | AI queue generation engine (Echo Brain) |
-| [zemer-cipher](hhttps://github.com/ZemerTeam/zemer-cipher) | YouTube cipher deobfuscation and PoToken generation |
-| [Echo music](https://github.com/EchoMusicApp/Echo-Music) | YouTube cipher deobfuscation and PoToken generation |
+| [zemer-cipher](https://github.com/ZemerTeam/zemer-cipher) | Cipher deobfuscation and PoToken generation |
+| [Echo Music](https://github.com/EchoMusicApp/Echo-Music) | Inspiration |
 
 ---
 

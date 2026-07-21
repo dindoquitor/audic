@@ -20,13 +20,13 @@ cd audic
 
 ### 2. Configure Local Properties
 
-Create a `local.properties` file from the template:
+Copy the template and edit it:
 
 ```bash
 cp local.properties.template local.properties
 ```
 
-Edit `local.properties` and set your Android SDK path:
+Set your Android SDK path in `local.properties`:
 
 ```properties
 sdk.dir=/path/to/your/android/sdk
@@ -34,9 +34,29 @@ sdk.dir=/path/to/your/android/sdk
 
 **Example paths:**
 
-- macOS: `/Users/username/Library/Android/sdk`
-- Linux: `/home/username/Android/sdk`
-- Windows: `C:\\Users\\username\\AppData\\Local\\Android\\sdk`
+| OS | Path |
+| :--- | :--- |
+| macOS | `/Users/username/Library/Android/sdk` |
+| Linux | `/home/username/Android/sdk` |
+| Windows | `C:\\Users\\username\\AppData\\Local\\Android\\sdk` |
+
+The app also reads API keys from `local.properties`. These are optional unless you need the corresponding feature:
+
+```properties
+# Required for PoToken/YouTube playback stability
+GOOGLE_API_KEY=your_google_api_key_here
+
+# Required for Last.fm scrobbling
+LASTFM_API_KEY=your_lastfm_api_key_here
+LASTFM_SECRET=your_lastfm_secret_here
+```
+
+**Where to get the keys:**
+
+| Key | How to get |
+| :--- | :---------- |
+| `GOOGLE_API_KEY` | From the existing `local.properties` (ask another dev) or use the generic Android API key |
+| `LASTFM_API_KEY` / `LASTFM_SECRET` | Register at [last.fm/api/account/create](https://www.last.fm/api/account/create) |
 
 ### 3. Configure Firebase (Optional)
 
