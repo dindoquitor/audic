@@ -29,8 +29,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import android.content.Intent
-import android.net.Uri
 import androidx.navigation.NavController
 import com.audic.music.LocalPlayerAwareWindowInsets
 import com.audic.music.R
@@ -111,13 +109,7 @@ fun UpdateSettings(
                         }
                     },
                     onClick = {
-                        val isFoss = !BuildConfig.CAST_AVAILABLE
-                        if (isFoss) {
-                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/dindoquitor/audic"))
-                            context.startActivity(intent)
-                        } else {
                             navController.navigate("update")
-                        }
                     }
                 ),
                 Material3SettingsItem(
