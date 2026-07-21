@@ -48,16 +48,17 @@ data class YouTubeClient(
         const val REFERER_YOUTUBE_MUSIC = "$ORIGIN_YOUTUBE_MUSIC/"
         const val API_URL_YOUTUBE_MUSIC = "$ORIGIN_YOUTUBE_MUSIC/youtubei/v1/"
 
+        // ponytail: versions from yt-dlp master (2026-07-08), update quarterly
         val WEB = YouTubeClient(
             clientName = "WEB",
-            clientVersion = "2.20260213.00.00",
+            clientVersion = "2.20260708.00.00",
             clientId = "1",
             userAgent = USER_AGENT_WEB,
         )
 
         val WEB_REMIX = YouTubeClient(
             clientName = "WEB_REMIX",
-            clientVersion = "1.20260213.01.00",
+            clientVersion = "1.20260707.12.00",
             clientId = "67",
             userAgent = USER_AGENT_WEB,
             loginSupported = true,
@@ -67,7 +68,7 @@ data class YouTubeClient(
 
         val WEB_CREATOR = YouTubeClient(
             clientName = "WEB_CREATOR",
-            clientVersion = "1.20260213.00.00",
+            clientVersion = "1.20260708.06.00",
             clientId = "62",
             userAgent = USER_AGENT_WEB,
             loginSupported = true,
@@ -77,7 +78,7 @@ data class YouTubeClient(
 
         val TVHTML5 = YouTubeClient(
             clientName = "TVHTML5",
-            clientVersion = "7.20260213.00.00",
+            clientVersion = "7.20260707.07.00",
             clientId = "7",
             userAgent = "Mozilla/5.0(SMART-TV; Linux; Tizen 4.0.0.2) AppleWebkit/605.1.15 (KHTML, like Gecko) SamsungBrowser/9.2 TV Safari/605.1.15",
             loginSupported = true,
@@ -89,11 +90,12 @@ data class YouTubeClient(
         /**
          * Embedded player that can bypass age-restriction.
          * Does not require login for age-restricted content.
+         * Client ID and version from yt-dlp tv_simply.
          */
         val TVHTML5_SIMPLY_EMBEDDED_PLAYER = YouTubeClient(
-            clientName = "TVHTML5_SIMPLY_EMBEDDED_PLAYER",
-            clientVersion = "2.0",
-            clientId = "85",
+            clientName = "TVHTML5_SIMPLY",
+            clientVersion = "1.0",
+            clientId = "75",
             userAgent = "Mozilla/5.0 (PlayStation; PlayStation 4/12.02) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
             loginSupported = true,
             loginRequired = false,
@@ -103,17 +105,17 @@ data class YouTubeClient(
 
         val IOS = YouTubeClient(
             clientName = "IOS",
-            clientVersion = "21.03.1",
+            clientVersion = "21.26.4",
             clientId = "5",
-            userAgent = "com.google.ios.youtube/21.03.1 (iPhone16,2; U; CPU iOS 18_2 like Mac OS X;)",
-            osVersion = "18.2.22C152",
+            userAgent = "com.google.ios.youtube/21.26.4 (iPhone16,2; U; CPU iOS 18_3_2 like Mac OS X;)",
+            osVersion = "18.3.2.22D82",
         )
 
         val MOBILE = YouTubeClient(
             clientName = "ANDROID",
-            clientVersion = "21.03.38",
+            clientVersion = "21.26.364",
             clientId = "3",
-            userAgent = "com.google.android.youtube/21.03.38 (Linux; U; Android 14) gzip",
+            userAgent = "com.google.android.youtube/21.26.364 (Linux; U; Android 14) gzip",
             loginSupported = true,
             useSignatureTimestamp = true
         )
@@ -125,9 +127,9 @@ data class YouTubeClient(
          */
         val ANDROID_NO_SDK = YouTubeClient(
             clientName = "ANDROID",
-            clientVersion = "21.03.38",
+            clientVersion = "21.26.364",
             clientId = "3",
-            userAgent = "com.google.android.youtube/21.03.38 (Linux; U; Android 14) gzip",
+            userAgent = "com.google.android.youtube/21.26.364 (Linux; U; Android 14) gzip",
             friendlyName = "Android No SDK",
             loginSupported = false,
             useSignatureTimestamp = false
@@ -135,9 +137,9 @@ data class YouTubeClient(
 
         val ANDROID_VR_NO_AUTH = YouTubeClient(
             clientName = "ANDROID_VR",
-            clientVersion = "1.61.48",
+            clientVersion = "1.65.10",
             clientId = "28",
-            userAgent = "com.google.android.apps.youtube.vr.oculus/1.61.48 (Linux; U; Android 12; en_US; Oculus Quest 3; Build/SQ3A.220605.009.A1; Cronet/132.0.6808.3)",
+            userAgent = "com.google.android.apps.youtube.vr.oculus/1.65.10 (Linux; U; Android 12L; en_US; Oculus Quest 3; Build/SQ3A.220605.009.A1; Cronet/132.0.6808.3)",
             loginSupported = false,
             useSignatureTimestamp = false
         )
@@ -145,21 +147,22 @@ data class YouTubeClient(
         /**
          * Video not playable: Kids / Paid / Movie / Private / Age-restricted.
          * This client can only be used when logged out.
+         * Current ANDROID_VR — most reliable client, no PoToken required by YouTube CDN.
          */
-        val ANDROID_VR_1_61_48 = YouTubeClient(
+        val ANDROID_VR = YouTubeClient(
             clientName = "ANDROID_VR",
-            clientVersion = "1.61.48",
+            clientVersion = "1.65.10",
             clientId = "28",
-            userAgent = "com.google.android.apps.youtube.vr.oculus/1.61.48 (Linux; U; Android 12; en_US; Quest 3; Build/SQ3A.220605.009.A1; Cronet/132.0.6808.3)",
+            userAgent = "com.google.android.apps.youtube.vr.oculus/1.65.10 (Linux; U; Android 12L; en_US; Quest 3; Build/SQ3A.220605.009.A1; Cronet/132.0.6808.3)",
             osName = "Android",
-            osVersion = "12",
+            osVersion = "12L",
             deviceMake = "Oculus",
             deviceModel = "Quest 3",
             androidSdkVersion = "32",
             buildId = "SQ3A.220605.009.A1",
             cronetVersion = "132.0.6808.3",
             packageName = "com.google.android.apps.youtube.vr.oculus",
-            friendlyName = "Android VR 1.61",
+            friendlyName = "Android VR",
             loginSupported = false,
             useSignatureTimestamp = false
         )
@@ -167,6 +170,7 @@ data class YouTubeClient(
         /**
          * Uses non adaptive bitrate, which fixes audio stuttering with YT Music.
          * Does not use AV1.
+         * Older VR version kept as fallback for non-adaptive stream quality.
          */
         val ANDROID_VR_1_43_32 = YouTubeClient(
             clientName = "ANDROID_VR",
@@ -191,9 +195,9 @@ data class YouTubeClient(
          */
         val ANDROID_CREATOR = YouTubeClient(
             clientName = "ANDROID_CREATOR",
-            clientVersion = "25.03.101",
+            clientVersion = "25.26.100",
             clientId = "14",
-            userAgent = "com.google.android.apps.youtube.creator/25.03.101 (Linux; U; Android 15; en_US; Pixel 9 Pro Fold; Build/AP3A.241005.015.A2; Cronet/132.0.6779.0)",
+            userAgent = "com.google.android.apps.youtube.creator/25.26.100 (Linux; U; Android 15; en_US; Pixel 9 Pro Fold; Build/AP3A.241005.015.A2; Cronet/132.0.6779.0)",
             osName = "Android",
             osVersion = "15",
             deviceMake = "Google",
@@ -230,9 +234,9 @@ data class YouTubeClient(
          */
         val IPADOS = YouTubeClient(
             clientName = "IOS",
-            clientVersion = "21.03.3",
+            clientVersion = "21.26.4",
             clientId = "5",
-            userAgent = "com.google.ios.youtube/21.03.3 (iPad7,6; U; CPU iPadOS 17_7_10 like Mac OS X; en-US)",
+            userAgent = "com.google.ios.youtube/21.26.4 (iPad7,6; U; CPU iPadOS 17_7_10 like Mac OS X; en-US)",
             osName = "iPadOS",
             osVersion = "17.7.10.21H450",
             deviceMake = "Apple",

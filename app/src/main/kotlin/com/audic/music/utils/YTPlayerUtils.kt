@@ -10,8 +10,8 @@ import com.music.innertube.YouTube
 import com.music.innertube.models.YouTubeClient
 import com.music.innertube.models.YouTubeClient.Companion.ANDROID_CREATOR
 import com.audic.music.utils.BotDetectionMitigator
+import com.music.innertube.models.YouTubeClient.Companion.ANDROID_VR
 import com.music.innertube.models.YouTubeClient.Companion.ANDROID_VR_1_43_32
-import com.music.innertube.models.YouTubeClient.Companion.ANDROID_VR_1_61_48
 import com.music.innertube.models.YouTubeClient.Companion.ANDROID_VR_NO_AUTH
 import com.music.innertube.models.YouTubeClient.Companion.IOS
 import com.music.innertube.models.YouTubeClient.Companion.IPADOS
@@ -84,26 +84,30 @@ object YTPlayerUtils {
     // Cached signature timestamp — YouTube player JS rarely changes within a session
     private var cachedSignatureTimestamp: Int? = null
 
-    
-    // IOS is the most reliable unauthenticated client — rarely blocked by YouTube
-    private val MAIN_CLIENT: YouTubeClient = IOS
 
-    
-    private val METADATA_CLIENT: YouTubeClient = WEB_REMIX
+    // ANDROID_VR (Oculus Quest) is the most reliable unauthenticated client.
+    // Unlike IOS (which now requires Apple device attestation for PoToken),
+    // ANDROID_VR has no PoToken requirement on the YouTube CDN as of 2026-07.
+    private val MAIN_CLIENT: YouTubeClient = ANDROID_VR
+
+
+    private val METADATA_CLIENT: YouTubeClient = IOS
 
     private val STREAM_FALLBACK_CLIENTS: Array<YouTubeClient> = arrayOf(
         // Best audio quality: non-adaptive bitrate, no AV1 stuttering
-        ANDROID_VR_1_61_48,
         ANDROID_VR_1_43_32,
-        // Web clients with PoToken support
+        // Standard Android mobile — well-supported, no CDN PoToken requirement
+        MOBILE,
+        // iOS clients
+        IOS,
+        IPADOS,
+        // Web clients with PoToken support (require working WebView for PoToken)
         WEB_REMIX,
         TVHTML5_SIMPLY_EMBEDDED_PLAYER,
-        TVHTML5,
-        // More Android/iOS variants
+        // More Android/iOS/TV variants
         ANDROID_CREATOR,
-        IPADOS,
         ANDROID_VR_NO_AUTH,
-        MOBILE,
+        TVHTML5,
         WEB,
         WEB_CREATOR
     )
@@ -189,7 +193,7 @@ object YTPlayerUtils {
                 YouTube.player(videoId, playlistId, MAIN_CLIENT, signatureTimestamp.timestamp, poToken?.playerRequestPoToken).getOrThrow()
             }
             val metadataDeferred = if (isLoggedIn) async {
-                Timber.tag(logTag).d("Fetching metadata from METADATA_CLIENT (WEB_REMIX) in parallel")
+                Timber.tag(logTag).d("Fetching metadata from METADATA_CLIENT (IOS) in parallel")
                 var metaPoToken: PoTokenResult? = null
                 val metaSessionId = YouTube.dataSyncId
                 if (METADATA_CLIENT.useWebPoTokens && metaSessionId != null) {
@@ -390,21 +394,27 @@ object YTPlayerUtils {
                     STREAM_FALLBACK_CLIENTS[clientIndex]
                 }
 
-                if (currentClient.useWebPoTokens) {
-                    try {
-                        Timber.tag(logTag).d("Applying n-transform to stream URL for ${currentClient.clientName}")
-                        val transformed = EjsNTransformSolver.transformNParamInUrl(streamUrl!!)
-                        if (transformed != streamUrl) {
-                            streamUrl = transformed
-                            Timber.tag(logTag).d("N-transform applied successfully")
+                // Always apply n-transform if URL contains n= parameter.
+                // YouTube throttling with the n= param now affects ALL client types (ANDROID_VR,
+                // IOS, etc.) — not just web clients. If we don't transform it, ExoPlayer gets 403.
+                if (streamUrl != null) {
+                    val nMatch = Regex("[?&]n=").find(streamUrl)
+                    if (nMatch != null) {
+                        try {
+                            Timber.tag(logTag).d("Applying n-transform (n= detected in URL)")
+                            val transformed = EjsNTransformSolver.transformNParamInUrl(streamUrl)
+                            if (transformed != streamUrl) {
+                                streamUrl = transformed
+                                Timber.tag(logTag).d("N-transform applied successfully")
+                            }
+                        } catch (e: Exception) {
+                            Timber.tag(logTag).e(e, "N-transform failed: ${e.message}")
                         }
-                    } catch (e: Exception) {
-                        Timber.tag(logTag).e(e, "N-transform failed: ${e.message}")
                     }
                 }
 
-                
-                
+                // Append pot= to stream URL for web PoToken clients only.
+                // Non-web clients (ANDROID_VR, IOS) don't use this parameter.
                 if (currentClient.useWebPoTokens && poToken?.streamingDataPoToken != null) {
                     Timber.tag(logTag).d("Appending pot= parameter to stream URL")
                     val separator = if ("?" in streamUrl!!) "&" else "?"
@@ -523,6 +533,12 @@ object YTPlayerUtils {
         val isAgeRestricted: Boolean
     )
 
+    // A known non-age-restricted video used only to fetch the signature timestamp.
+    // The timestamp is embedded in YouTube's player JS (same for all videos),
+    // so any non-restricted video works. Using this avoids the case where
+    // NewPipe fails on age-restricted videos, leaving us without a timestamp.
+    private const val SAFE_TIMESTAMP_VIDEO_ID = "jfKfPfyJRdk"
+
     private fun getSignatureTimestampOrNull(videoId: String): SignatureTimestampResult {
         // Use cached timestamp — YouTube player JS rarely changes within a session
         cachedSignatureTimestamp?.let { cached ->
@@ -530,7 +546,19 @@ object YTPlayerUtils {
             return SignatureTimestampResult(cached, isAgeRestricted = false)
         }
         
-        Timber.tag(logTag).d("Getting signature timestamp for videoId: $videoId")
+        // Try to fetch timestamp using a safe non-restricted video first.
+        // This ensures we get a valid timestamp even when the current video
+        // is age-restricted (which would cause NewPipe to fail).
+        Timber.tag(logTag).d("Getting signature timestamp via safe video: $SAFE_TIMESTAMP_VIDEO_ID")
+        val safeResult = NewPipeExtractor.getSignatureTimestamp(SAFE_TIMESTAMP_VIDEO_ID)
+        safeResult.onSuccess { timestamp ->
+            Timber.tag(logTag).d("Signature timestamp obtained via safe video: $timestamp")
+            cachedSignatureTimestamp = timestamp
+            return SignatureTimestampResult(timestamp, isAgeRestricted = false)
+        }
+        
+        // Fallback: try the actual video ID (in case safe video fails for some reason)
+        Timber.tag(logTag).d("Safe video failed, trying actual videoId: $videoId")
         val result = NewPipeExtractor.getSignatureTimestamp(videoId)
         return result.fold(
             onSuccess = { timestamp ->
