@@ -357,7 +357,7 @@ fun NavGraphBuilder.navigationBuilder(
         route = "settings/appearance?highlightKey={highlightKey}",
         arguments = listOf(navArgument("highlightKey") { type = NavType.StringType; nullable = true })
     ) { backStackEntry ->
-        AppearanceSettings(navController, scrollBehavior, activity, snackbarHostState, highlightKey = backStackEntry.arguments?.getString("highlightKey"))
+        AppearanceSettings(navController, scrollBehavior, activity, highlightKey = backStackEntry.arguments?.getString("highlightKey"))
     }
 
     composable("settings/appearance/theme") {

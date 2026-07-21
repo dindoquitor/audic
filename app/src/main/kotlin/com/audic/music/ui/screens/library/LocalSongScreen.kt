@@ -357,7 +357,7 @@ fun LocalSongScreen(
                                 )
                             }
                         },
-                        colors = TopAppBarDefaults.largeTopAppBarColors(
+                        colors = TopAppBarDefaults.topAppBarColors(
                             containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.88f),
                             scrolledContainerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.96f),
                         ),

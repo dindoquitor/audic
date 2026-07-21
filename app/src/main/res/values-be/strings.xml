@@ -16,14 +16,12 @@
     <string name="mood_and_genres">Настрой і жанры</string>
     <string name="account">Уліковы запіс</string>
     <string name="quick_picks">Хуткі выбар</string>
-    <string name="quick_picks_empty">Паслухайце песні, каб стварыць хуткі выбар</string>
     <string name="new_release_albums">Новыя альбомы</string>
     <string name="today">Сёння</string>
     <string name="yesterday">Учора</string>
     <string name="this_week">На гэтым тыдні</string>
     <string name="last_week">На мінулым тыдні</string>
     <string name="most_played_songs">Самыя праслухоўваныя песні</string>
-    <string name="most_played_artists">Самыя праслухоўваныя выканаўцы</string>
     <string name="search">Пошук</string>
     <string name="search_yt_music">Пошук у YouTube Music…</string>
     <string name="search_library">Пошук у бібліятэцы…</string>
@@ -36,7 +34,6 @@
     <string name="filter_community_playlists">Плэй-лісты супольнасці</string>
     <string name="filter_featured_playlists">Рэкамендаваныя плэй-лісты</string>
     <string name="no_results_found">Нічога не знойдзена</string>
-    <string name="from_your_library">З вашай бібліятэкі</string>
     <string name="liked_songs">Упадабаныя песні</string>
     <string name="downloaded_songs">Спампаваныя песні</string>
     <string name="playlist_is_empty">Плэй-ліст пусты</string>
@@ -81,23 +78,14 @@
     <string name="volume">Узровень гучнасці</string>
     <string name="file_size">Памер файла</string>
     <string name="unknown">Невядома</string>
-    <string name="copied">Скапіявана ў буфер абмену</string>
-    <string name="edit_lyrics">Рэдагаваць тэкст песні</string>
     <string name="search_lyrics">Шукаць тэкст песні</string>
     <string name="edit_song">Рэдагаваць песню</string>
     <string name="song_title">Назва песні</string>
     <string name="song_artists">Выканаўцы песні</string>
-    <string name="error_song_title_empty">Назва песні не можа быць пустой.</string>
-    <string name="error_song_artist_empty">Імя выканаўцы песні не можа быць пустым.</string>
     <string name="save">Захаваць</string>
-    <string name="choose_playlist">Выбраць плэй-ліст</string>
     <string name="edit_playlist">Рэдагаваць плэй-ліст</string>
     <string name="create_playlist">Стварыць плэй-ліст</string>
-    <string name="playlist_name">Назва плэй-ліста</string>
-    <string name="error_playlist_name_empty">Назва плэй-ліста не можа быць пустой.</string>
-    <string name="edit_artist">Рэдагаваць выканаўцу</string>
     <string name="artist_name">Імя выканаўцы</string>
-    <string name="error_artist_name_empty">Імя выканаўцы не можа быць пустым.</string>
     <plurals name="n_song">
         <item quantity="one">%d песня</item>
         <item quantity="few">%d песні</item>
@@ -140,7 +128,6 @@
         <item quantity="many">%d гадоў</item>
         <item quantity="other">%d гадоў</item>
     </plurals>
-    <string name="playlist_imported">Плэй-ліст імпартаваны</string>
     <string name="removed_song_from_playlist">«%s» выдалена з плэй-ліста</string>
     <string name="playlist_synced">Плэй-ліст сінхранізаваны</string>
     <string name="undo">Адмяніць</string>
@@ -170,13 +157,9 @@
     <string name="settings">Налады</string>
     <string name="appearance">Выгляд</string>
     <string name="enable_dynamic_theme">Уключыць дынамічную тэму</string>
-    <string name="dark_theme">Цёмная тэма</string>
-    <string name="dark_theme_on">Укл.</string>
     <string name="dark_theme_off">Выкл.</string>
     <string name="dark_theme_follow_system">Як у сістэме</string>
-    <string name="pure_black">Чыста чорны</string>
     <string name="default_open_tab">Прадвызначаная ўкладка</string>
-    <string name="customize_navigation_tabs">Наладзіць укладкі навігацыі</string>
     <string name="lyrics_text_position">Размяшчэнне тэксту песні</string>
     <string name="left">Злева</string>
     <string name="center">Па цэнтры</string>
@@ -189,28 +172,21 @@
     <string name="enable_proxy">Уключыць проксі</string>
     <string name="proxy_type">Тып проксі</string>
     <string name="proxy_url">URL-адрас проксі</string>
-    <string name="restart_to_take_effect">Перазапусціце праграму, каб ужыць змены</string>
     <string name="player_and_audio">Прайгравальнік і аўдыя</string>
     <string name="audio_quality">Якасць музыкі</string>
-    <string name="audio_quality_auto">Аўтаматычна</string>
-    <string name="audio_quality_high">Высокая</string>
-    <string name="audio_quality_low">Нізкая</string>
     <string name="persistent_queue">Пастаянная чарга</string>
     <string name="skip_silence">Прапускаць цішыню</string>
     <string name="audio_normalization">Нармалізацыя аўдыя</string>
     <string name="equalizer">Эквалайзер</string>
     <string name="storage">Сховішча</string>
-    <string name="cache">Кэш</string>
     <string name="image_cache">Кэш выяў</string>
     <string name="song_cache">Кэш песень</string>
-    <string name="max_cache_size">Максімальны памер кэша</string>
     <string name="unlimited">Без абмежаванняў</string>
     <string name="clear_all_downloads">Выдаліць усе спампаваныя файлы</string>
     <string name="max_image_cache_size">Максімальны памер кэша выяў</string>
     <string name="clear_image_cache">Ачысціць кэш выяў</string>
     <string name="max_song_cache_size">Максімальны памер кэша песень</string>
     <string name="clear_song_cache">Ачысціць кэш песень</string>
-    <string name="size_used">Выкарыстана %s</string>
     <string name="privacy">Прыватнасць</string>
     <string name="pause_listen_history">Прыпыніць запіс гісторыі праслухоўвання</string>
     <string name="clear_listen_history">Ачысціць гісторыю праслухоўвання</string>
@@ -220,35 +196,22 @@
     <string name="clear_search_history_confirm">Сапраўды ачысціць усю гісторыю пошуку?</string>
     <string name="enable_kugou">Уключыць пастаўшчыка тэкстаў песень KuGou</string>
     <string name="backup_restore">Рэзервовае капіраванне і аднаўленне</string>
-    <string name="action_backup">Стварыць рэзервовую копію</string>
-    <string name="action_restore">Аднавіць</string>
-    <string name="imported_playlist">Імпартаваны плэй-ліст</string>
     <string name="backup_create_success">Рэзервовая копія паспяхова створана</string>
     <string name="backup_create_failed">Не ўдалося стварыць рэзервовую копію</string>
     <string name="restore_failed">Не ўдалося аднавіць рэзервовую копію</string>
     <string name="about">Аб праграме</string>
-    <string name="app_version">Версія праграмы</string>
-    <string name="new_version_available">Даступная новая версія</string>
-    <string name="translation_models">Мадэлі перакладу</string>
-    <string name="clear_translation_models">Выдаліць мадэлі перакладу</string>
     <!-- Bottom navigation -->
-    <string name="music">Музыка</string>
     <!-- Stats -->
-    <string name="most_played_albums">Самыя праслухоўваныя альбомы</string>
     <!-- Search -->
     <string name="filter_library">Бібліятэка</string>
     <string name="filter_liked">Упадабанае</string>
     <string name="filter_downloaded">Спампаванае</string>
     <string name="filter_local">Лакальнае</string>
-    <string name="filter_bookmarked">У закладках</string>
     <!-- Library -->
-    <string name="library_song_empty">Тут з\'явяцца песні з бібліятэкі</string>
     <string name="library_artist_empty">Тут з\'явяцца выканаўцы з бібліятэкі</string>
     <string name="library_album_empty">Тут з\'явяцца альбомы з бібліятэкі</string>
-    <string name="library_playlist_empty">Тут з\'явяцца вашы плэй-лісты</string>
     <!-- Album screen -->
     <string name="other_versions">Іншыя версіі</string>
-    <string name="album_description_placeholder">Гэта часовае апісанне альбома. Прыемнага праслухоўвання кампазіцый ніжэй!</string>
     <!-- Playlist -->
     <string name="remove_download_playlist_confirm">Сапраўды выдаліць усе песні плэй-ліста «%s» са сховішча спампаваных песень?</string>
     <string name="delete_playlist_confirm">Сапраўды выдаліць плэй-ліст «%s»?</string>
@@ -259,8 +222,6 @@
     <string name="shuffle_label">Перамяшаць</string>
     <string name="pause">Прыпыніць</string>
     <!-- Menu -->
-    <string name="add_all_to_library">Дадаць усё ў бібліятэку</string>
-    <string name="remove_all_from_library">Выдаліць усё з бібліятэкі</string>
     <string name="saving">Захаванне</string>
     <string name="saved">Захавана</string>
     <string name="start_an_radio">Радыё</string>
@@ -269,7 +230,6 @@
     <string name="more_label">Яшчэ</string>
     <string name="releases_for_you">Рэлізы для вас</string>
     <string name="remove_from_playlist">Выдаліць з плэй-ліста</string>
-    <string name="remove_from_queue">Выдаліць з чаргі</string>
     <string name="advanced">Пашыраныя налады</string>
     <string name="tempo_and_pitch">Тэмп і вышыня тону</string>
     <!-- Dialog -->
@@ -294,18 +254,13 @@
         <item quantity="other">Знойдзена %d APK</item>
     </plurals>
     <!-- Player action -->
-    <string name="action_like_all">Упадабаць усё</string>
-    <string name="action_remove_like_all">Выдаліць усё з упадабаных</string>
     <!-- Settings -->
     <string name="theme">Тэма</string>
     <string name="theme_desc">Наладзьце тэму праграмы</string>
     <string name="theme_colors">Тэма і колеры</string>
     <string name="theme_mode">Рэжым тэмы</string>
     <string name="color_palette">Палітра колераў</string>
-    <string name="use_system_colors">Выкарыстоўваць сістэмныя колеры</string>
     <string name="player">Прайгравальнік</string>
-    <string name="player_text_alignment">Выраўноўванне тэксту прайгравальніка</string>
-    <string name="sided">Па баках</string>
     <string name="player_slider_style">Стыль паўзунка прайгравальніка</string>
     <string name="default_">Прадвызначаны</string>
     <string name="apple_music">Apple Music</string>
@@ -316,14 +271,11 @@
     <string name="big">Вялікі</string>
     <string name="action_logout">Выйсці</string>
     <string name="action_login">Увайсці</string>
-    <string name="show_audio_quality_badge">Паказваць значок якасці музыкі</string>
     <string name="not_logged_in">Уваход не выкананы</string>
-    <string name="login_failed">Не ўдалося ўвайсці</string>
     <string name="network_ip_version">Версія сеткавага IP</string>
     <string name="ip_version_auto">Аўтаматычна</string>
     <string name="ip_version_ipv4">Прымусова IPv4</string>
     <string name="ip_version_ipv6">Прымусова IPv6</string>
-    <string name="audio_quality_lossless">Музыка без страт</string>
     <string name="queue">Чарга</string>
     <string name="persistent_queue_desc">Аднаўляць апошнюю чаргу пры запуску праграмы</string>
     <string name="auto_load_more">Аўтаматычна загружаць больш песень</string>
@@ -335,30 +287,23 @@
     <string name="clear_downloaded_updates_desc">Выдаліць спампаваныя APK-файлы, каб вызваліць месца</string>
     <string name="listen_history">Гісторыя праслухоўвання</string>
     <string name="search_history">Гісторыя пошуку</string>
-    <string name="use_login_for_browse">Выкарыстоўваць уліковы запіс для прагляду змесціва</string>
-    <string name="use_login_for_browse_desc">Гэта можа паўплываць на змесціва, якое вы бачыце. Напрыклад, калі вы ўвайшлі праз уліковы запіс Premium, будуць паказвацца альбомы, даступныя толькі карыстальнікам Premium</string>
     <string name="disable_screenshot">Забараніць здымкі экрана</string>
     <string name="disable_screenshot_desc">Калі гэты параметр уключаны, здымкі экрана і выгляд праграмы ў спісе нядаўніх будуць недаступныя.</string>
     <string name="enable_lrclib">Уключыць пастаўшчыка тэкстаў песень LrcLib</string>
     <string name="hide_explicit">Хаваць змесціва для дарослых</string>
     <string name="discord_integration">Інтэграцыя з Discord</string>
-    <string name="discord_information">audicmusic выкарыстоўвае бібліятэку KizzyRPC, каб задаваць стан вашага ўліковага запісу Discord. Для гэтага выкарыстоўваецца падлучэнне Discord Gateway, што можа лічыцца парушэннем умоў выкарыстання Discord. Аднак выпадкаў блакіроўкі ўліковых запісаў карыстальнікаў з гэтай прычыны не вядома. Выкарыстоўвайце на ўласную рызыку.\nchomusic атрымае толькі ваш токен, а ўсе астатнія даныя будуць захоўвацца лакальна.</string>
     <string name="dismiss">Закрыць</string>
     <string name="options">Параметры</string>
     <string name="preview">Папярэдні прагляд</string>
     <string name="enable_discord_rpc">Уключыць Rich Presence</string>
     <string name="bluetooth_permission_required">Для выяўлення аўдыяпрылад патрабуецца дазвол на выкарыстанне Bluetooth.</string>
-    <string name="streaming_to">Перадача на</string>
     <string name="this_phone">Гэты тэлефон</string>
     <string name="wired_headphones">Правадныя навушнікі</string>
     <string name="hdmi">HDMI</string>
     <string name="phone_speaker">Дынамік тэлефона</string>
     <string name="audio_quality_title">Якасць музыкі</string>
-    <string name="battery_content_desc">Узровень зараду батарэі</string>
     <string name="done">Гатова</string>
     <string name="audio_devices">Аўдыяпрылады</string>
-    <string name="bluetooth_headphones">Bluetooth-навушнікі</string>
-    <string name="license">GNU General Public License v3.0</string>
     <string name="standard_lyrics_blur">Звычайнае размыццё тэксту песні</string>
     <string name="listen_together_smart_resync">Разумная сеткавая перасінхранізацыя</string>
     <string name="listen_together_smart_resync_desc">Аўтаматычна сінхранізавацца з вядучым пасля разрыву злучэння</string>
@@ -400,11 +345,6 @@
     <string name="export_successful">Плэй-ліст паспяхова экспартаваны</string>
     <string name="activity_history">Зводка праслухоўвання</string>
     <string name="total_listening_time">Агульны час праслухоўвання</string>
-    <string name="unique_songs">Унікальныя песні</string>
-    <string name="unique_artists">Унікальныя выканаўцы</string>
-    <string name="unique_albums">Унікальныя альбомы</string>
-    <string name="selected_period">Выбраны перыяд</string>
-    <string name="hours_minutes_format">%1$d г %2$d хв</string>
     <string name="content_sponsor_block">SponsorBlock (аўтапрапусканне)</string>
     <string name="content_sponsor_block_desc">Аўтаматычна прапускаць рэкламу спонсараў, уступы і немузычныя часткі відэа</string>
     <string name="spotify_import_by_link">Імпартаваць плэй-ліст па спасылцы</string>
@@ -434,8 +374,6 @@
     <string name="set_listenbrainz_token">Задаць токен ListenBrainz</string>
     <string name="youtube_decryption_settings">Audic Extractor</string>
     <string name="youtube_decryption_desc">Наладзіць параметры экстрактара</string>
-    <string name="youtube_decryption_support">Audic Extractor</string>
-    <string name="youtube_decryption_support_desc">Аўтаматычна здабывае канфігурацыі прайгравання YouTube. Заўсёды ўключана.</string>
     <string name="force_update_cipher">Прымусова абнавіць канфігурацыі</string>
     <string name="force_update_cipher_desc">Спампаваць найноўшыя перавызначэнні адпаведнасцей экстрактара. Не больш за 3 абнаўленні на дзень.</string>
     <string name="youtube_decryption_info">Адпаведнасці экстрактара дынамічна атрымліваюцца з вашага ўласнага вузла. Таймер уверсе паказвае час да наступнай аўтаматычнай праверкі сінхранізацыі. Калі запытаць ручное абнаўленне больш за 3 разы, яно будзе заблакіравана на адзін дзень.</string>
@@ -444,9 +382,6 @@
     <string name="cipher_update_success">Адпаведнасці экстрактара абноўлены! Загружана прайгравальнікаў: %d.</string>
     <string name="cipher_update_failed">Не ўдалося абнавіць адпаведнасці экстрактара: %s</string>
     <string name="cipher_updating">Абнаўленне канфігурацый экстрактара…</string>
-    <string name="hours_label">Гадзіны</string>
-    <string name="minutes_label">Хвіліны</string>
-    <string name="seconds_label">Секунды</string>
     <string name="liquid_glass">Вадкае шкло (бэта-версія)</string>
     <string name="player_background_liquid_glass">Вадкае шкло</string>
     <string name="liquid_glass_settings">Вадкае шкло (бэта-версія)</string>
@@ -477,7 +412,4 @@
     <string name="liquid_glass_performance_warning">Візуалізацыя вадкага шкла патрабуе шмат рэсурсаў і на некаторых прыладах можа знізіць плаўнасць працы і час аўтаномнай працы</string>
     <string name="liquid_glass_requires_floating_nav_bar">Патрабуецца ўключыць плывучую панэль навігацыі</string>
     <string name="color_picker_hex">HEX</string>
-    <string name="color_white">Белы</string>
-    <string name="color_light_gray">Светла-шэры</string>
-    <string name="color_black">Чорны</string>
 </resources>

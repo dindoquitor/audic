@@ -12,7 +12,6 @@
     <string name="stats">Statistikk</string>
     <string name="mood_and_genres">Stemning og sjangrer</string>
     <string name="quick_picks">Hurtigvalg</string>
-    <string name="quick_picks_empty">Hør på sanger for å generere hurtigvalgene dine</string>
     <string name="your_youtube_playlists">YouTube-spillelistene dine</string>
     <string name="similar_to">Ligner på</string>
     <string name="new_release_albums">Nylig slupne album</string>
@@ -21,8 +20,6 @@
     <string name="this_week">Denne uken</string>
     <string name="last_week">Forrige uke</string>
     <string name="most_played_songs">Mest spilte sanger</string>
-    <string name="most_played_artists">Mest spilte artister</string>
-    <string name="most_played_albums">Mest spilte album</string>
     <string name="search">Søk</string>
     <string name="search_yt_music">Søk gjennom YouTube Music …</string>
     <string name="search_library">Søk gjennom biblioteket …</string>
@@ -35,9 +32,6 @@
     <string name="filter_playlists">Spillelister</string>
     <string name="filter_community_playlists">Gemenskapsspillelister</string>
     <string name="filter_featured_playlists">Utvalgte spillelister</string>
-    <string name="filter_bookmarked">Bokmerkede</string>
-    <string name="library_playlist_empty">Spillelistene dine skal dukke opp her</string>
-    <string name="from_your_library">Fra biblioteket ditt</string>
     <string name="delete_playlist_confirm">Vil du virkelig fjerne spillelisten «%s»?</string>
     <string name="retry">Prøv på nytt</string>
     <string name="radio">Radio</string>
@@ -46,9 +40,7 @@
     <string name="details">Detaljer</string>
     <string name="edit">Rediger</string>
     <string name="play">Spill</string>
-    <string name="add_all_to_library">Legg til alle i biblioteket</string>
     <string name="remove_from_library">Fjern fra biblioteket</string>
-    <string name="remove_all_from_library">Fjern alle fra biblioteket</string>
     <string name="action_download">Last ned</string>
     <string name="downloading">Laster ned</string>
     <string name="remove_download">Fjern nedlasting</string>
@@ -60,7 +52,6 @@
     <string name="delete">Fjern</string>
     <string name="remove_from_history">Fjern fra historikk</string>
     <string name="remove_from_playlist">Fjern fra spilleliste</string>
-    <string name="remove_from_queue">Fjern fra køen</string>
     <string name="search_online">Søk på nettet</string>
     <string name="action_sync">Synkroniser</string>
     <string name="advanced">Avansert</string>
@@ -76,12 +67,9 @@
     <string name="codecs">Kodeker</string>
     <string name="bitrate">Bitrate</string>
     <string name="sample_rate">Samplerate</string>
-    <string name="choose_playlist">Velg spilleliste</string>
     <string name="edit_playlist">Rediger spilleliste</string>
     <string name="create_playlist">Opprett spilleliste</string>
-    <string name="edit_artist">Rediger artist</string>
     <string name="artist_name">Artistnavn</string>
-    <string name="error_artist_name_empty">Artistnavnet kan ikke være tomt.</string>
     <string name="add_anyway">Legg til allikevel</string>
     <string name="duplicates_description_single">Sangen er allerede i spillelisten</string>
     <string name="duplicates_description_multiple">%d sanger er allerede i spillelisten</string>
@@ -93,7 +81,6 @@
         <item quantity="one">%d artist</item>
         <item quantity="other">%d artister</item>
     </plurals>
-    <string name="playlist_imported">Spilleliste importert</string>
     <plurals name="n_playlist">
         <item quantity="one">%d spilleliste</item>
         <item quantity="other">%d spillelister</item>
@@ -108,7 +95,6 @@
     <string name="error_timeout">Tidsavbrudd</string>
     <string name="action_like">Lik</string>
     <string name="action_remove_like">Fjern like</string>
-    <string name="action_remove_like_all">Fjern alle liker</string>
     <string name="repeat_mode_one">Gjentar én sang</string>
     <string name="repeat_mode_all">Gjentar køen</string>
     <string name="queue_all_songs">Alle sanger</string>
@@ -116,13 +102,8 @@
     <string name="music_player">Musikkspiller</string>
     <string name="settings">Innstillinger</string>
     <string name="appearance">Utseende</string>
-    <string name="dark_theme">Mørk</string>
     <string name="dark_theme_follow_system">Følg systemet</string>
-    <string name="pure_black">Ren svart</string>
-    <string name="customize_navigation_tabs">Tilpass navigasjonsfaner</string>
     <string name="player">Spiller</string>
-    <string name="player_text_alignment">Spiller-tekstjustering</string>
-    <string name="sided">På siden</string>
     <string name="center">Senter</string>
     <string name="right">Høyre</string>
     <string name="default_">Forvalg</string>
@@ -138,11 +119,8 @@
     <string name="enable_proxy">Slå på mellomtjener</string>
     <string name="proxy_type">Type</string>
     <string name="proxy_url">Nettadresse</string>
-    <string name="restart_to_take_effect">Start på ny for iføre endringer</string>
     <string name="player_and_audio">Spiller og lyd</string>
     <string name="audio_quality">Lydkvalitet</string>
-    <string name="audio_quality_auto">Automatisk</string>
-    <string name="audio_quality_high">Høy</string>
     <string name="queue">Kø</string>
     <string name="persistent_queue">Vedvarende kø</string>
     <string name="persistent_queue_desc">Gjenopprett køen din når programmet starter</string>
@@ -152,10 +130,7 @@
     <string name="auto_skip_next_on_error_desc">Sørger for at avspillingen er fortløpende</string>
     <string name="stop_music_on_task_clear">Stopp musikk når programmet dras bort</string>
     <string name="equalizer">Tonekontroll</string>
-    <string name="cache">Hurtiglager</string>
     <string name="image_cache">Bildehurtiglager</string>
-    <string name="max_cache_size">Maksimal hurtiglagringsstørrelse</string>
-    <string name="size_used">%s brukt</string>
     <string name="privacy">Personvern</string>
     <string name="listen_history">Lyttehistorikk</string>
     <string name="clear_search_history">Fjern søkehistorikk</string>
@@ -163,16 +138,10 @@
     <string name="disable_screenshot_desc">Når dette er aktivert, kan skjermavbildninger ikke utføres i programmet, og «Nylig» i programmet er avslått</string>
     <string name="enable_lrclib">Slå på LrcLib-sangteksttilbyder</string>
     <string name="enable_kugou">Slå på KuGou-sangteksttilbyder</string>
-    <string name="action_backup">Sikkerhetskopier</string>
     <string name="discord_integration">Discord-integrasjon</string>
     <string name="dismiss">Avvis</string>
     <string name="options">Innstillinger</string>
-    <string name="login_failed">Innlogging mislyktes</string>
     <string name="enable_discord_rpc">Slå på rik tilstedeværelse</string>
-    <string name="app_version">Programversjon</string>
-    <string name="new_version_available">Ny versjon tilgjengelig</string>
-    <string name="translation_models">Oversettingsmodeller</string>
-    <string name="clear_translation_models">Fjern oversettingsmodeller</string>
     <plurals name="n_week">
         <item quantity="one">%d uke</item>
         <item quantity="other">%d uker</item>
@@ -188,7 +157,6 @@
     <string name="artists">Artister</string>
     <string name="account">Konto</string>
     <string name="no_results_found">Ingen treff funnet</string>
-    <string name="library_song_empty">Bibliotekssanger dukker opp her</string>
     <string name="library_artist_empty">Biblioteksartister dukker opp her</string>
     <string name="forgotten_favorites">Glemte favoritter</string>
     <string name="keep_listening">Fortsett å lytte</string>
@@ -210,18 +178,12 @@
     <string name="loudness">Lydintensitet</string>
     <string name="volume">Lydstyrke</string>
     <string name="unknown">Ukjent</string>
-    <string name="edit_lyrics">Rediger sangtekster</string>
     <string name="file_size">Filstørrelse</string>
-    <string name="copied">Kopiert til utklippstavlen</string>
     <string name="search_lyrics">Let etter sangtekster</string>
     <string name="edit_song">Rediger sang</string>
     <string name="song_artists">Sangartister</string>
     <string name="song_title">Sangtittel</string>
-    <string name="playlist_name">Spillelistenavn</string>
-    <string name="error_playlist_name_empty">Spillelistenavnet kan ikke være tomt.</string>
-    <string name="error_song_title_empty">Sangtittelen kan ikke være tom.</string>
     <string name="skip_duplicates">Hopp over duplikater</string>
-    <string name="error_song_artist_empty">Sangartistene kan ikke være tom.</string>
     <string name="save">Lagre</string>
     <string name="duplicates">Duplikater</string>
     <plurals name="n_album">
@@ -234,13 +196,11 @@
     </plurals>
     <string name="end_of_song">Slutten av sangen</string>
     <string name="error_unknown">Ukjent feil</string>
-    <string name="action_like_all">Lik alle</string>
     <string name="enable_dynamic_theme">Slå på dynamisk drakt</string>
     <string name="action_shuffle_on">Omstokking på</string>
     <string name="action_shuffle_off">Omstokking av</string>
     <string name="repeat_mode_off">Gjentagelse av</string>
     <string name="theme">Drakt</string>
-    <string name="dark_theme_on">På</string>
     <string name="dark_theme_off">Av</string>
     <string name="lyrics_text_position">Sangtekstjustering</string>
     <string name="left">Venstre</string>
@@ -248,7 +208,6 @@
     <string name="squiggly">Snirklete</string>
     <string name="big">Stor</string>
     <string name="content_country">Forvalginnholdsland</string>
-    <string name="audio_quality_low">Lav</string>
     <string name="auto_skip_next_on_error">Hopp til neste sang automatisk når en feil oppstår</string>
     <string name="audio_normalization">Lydnormalisering</string>
     <string name="song_cache">Sanghurtiglagring</string>
@@ -270,18 +229,13 @@
     <string name="backup_create_success">Sikkerhetskopi opprettet</string>
     <string name="backup_create_failed">Kunne ikke opprette sikkerhetskopi</string>
     <string name="restore_failed">Kunne ikke utføre gjenoppretting</string>
-    <string name="action_restore">Gjenopprett</string>
-    <string name="imported_playlist">Spilleliste importert</string>
     <string name="action_logout">Logg ut</string>
-    <string name="discord_information">audicmusic bruker KizzyRPC for å stille inn statusen på Discord-kontoen din. Dette innebærer bruk ave Discord Gateway-portneren, som kan anses som et brudd på Discords tjenestevilkår. Det finnes dog ingen kjente tilfelle av suspenderte brukerkonter på denne grunnen. Bruk på egen risiko. \n \naudicmusic henter bare inn symbolet ditt, og alt annet blir lagret lokalt.</string>
     <string name="preview">Forhåndsvisning</string>
     <string name="about">Om</string>
     <!-- Bottom navigation -->
-    <string name="music">Musikk</string>
     <!-- Search -->
     <string name="filter_local">Lokale</string>
     <!-- Album screen -->
-    <string name="album_description_placeholder">Dette er en plassholderbeskrivelse for albumet. Nyt låtene nedenfor!</string>
     <!-- Playlist -->
     <string name="you_might_also_like">Relatert spilleliste</string>
     <!-- Button -->
@@ -313,28 +267,21 @@
     <string name="theme_colors">Tema og farger</string>
     <string name="theme_mode">Temamodus</string>
     <string name="color_palette">Fargepalett</string>
-    <string name="use_system_colors">Bruk systemfarger</string>
     <string name="apple_music">Apple Music</string>
-    <string name="show_audio_quality_badge">Vis lydkvalitetsmerke</string>
     <string name="network_ip_version">Nettverks-IP-versjon</string>
     <string name="ip_version_auto">Automatisk</string>
     <string name="ip_version_ipv4">Tving IPv4</string>
     <string name="ip_version_ipv6">Tving IPv6</string>
-    <string name="audio_quality_lossless">Tapfri musikk</string>
     <string name="clear_downloaded_updates">Fjern nedlastede oppdateringer</string>
     <string name="clear_downloaded_updates_desc">Fjern nedlastede APK-filer for å frigjøre plass</string>
     <string name="bluetooth_permission_required">Bluetooth-tillatelse er nødvendig for å oppdage lydenheter.</string>
-    <string name="streaming_to">Strømmer til</string>
     <string name="this_phone">Denne telefonen</string>
     <string name="wired_headphones">Kablede hodetelefoner</string>
     <string name="hdmi">HDMI</string>
     <string name="phone_speaker">Telefonhøyttaler</string>
     <string name="audio_quality_title">Musikkvalitet</string>
-    <string name="battery_content_desc">Batterinivå</string>
     <string name="done">Ferdig</string>
     <string name="audio_devices">Lydenheter</string>
-    <string name="bluetooth_headphones">Bluetooth-hodetelefoner</string>
-    <string name="license">GNU General Public License v3.0</string>
     <string name="standard_lyrics_blur">Standard uklarhet for sangtekster</string>
     <string name="listen_together_smart_resync">Smart nettverkssynkronisering</string>
     <string name="listen_together_smart_resync_desc">Ta automatisk igjen verten etter et tilkoblingsbrudd</string>
@@ -372,16 +319,9 @@
     <string name="export_successful">Spillelisten ble eksportert</string>
     <string name="activity_history">Lyttesammendrag</string>
     <string name="total_listening_time">Total lyttetid</string>
-    <string name="unique_songs">Unike sanger</string>
-    <string name="unique_artists">Unike artister</string>
-    <string name="unique_albums">Unike album</string>
-    <string name="selected_period">Valgt periode</string>
-    <string name="hours_minutes_format">%1$dt %2$dmin</string>
     <string name="action_login">Logg inn</string>
     <string name="content_sponsor_block">SponsorBlock (hopp over automatisk)</string>
     <string name="content_sponsor_block_desc">Hopp automatisk over sponsorinnhold, introduksjoner og deler uten musikk i videoer</string>
-    <string name="use_login_for_browse">Bruk innlogging når du utforsker innhold</string>
-    <string name="use_login_for_browse_desc">Dette kan påvirke hvilket innhold du ser, og for eksempel vise album som kun er tilgjengelige med Premium hvis du er logget inn med en Premium-konto</string>
     <string name="spotify_import_by_link">Importer spilleliste via lenke</string>
     <string name="spotify_import_by_link_desc">Lim inn en lenke til en Spotify-spilleliste for å importere den, også spillelister du ikke eier</string>
     <string name="spotify_import_by_link_hint">https://open.spotify.com/playlist/…</string>
@@ -409,8 +349,6 @@
     <string name="set_listenbrainz_token">Angi ListenBrainz-token</string>
     <string name="youtube_decryption_settings">Audic Extractor</string>
     <string name="youtube_decryption_desc">Konfigurer innstillingene for uttrekkeren</string>
-    <string name="youtube_decryption_support">Audic Extractor</string>
-    <string name="youtube_decryption_support_desc">Henter automatisk ut konfigurasjoner for YouTube-avspilling. Låst til aktiv.</string>
     <string name="force_update_cipher">Tving oppdatering av konfigurasjoner</string>
     <string name="force_update_cipher_desc">Last ned de nyeste overstyringstilordningene for uttrekkeren. Begrenset til 3 oppdateringer per dag.</string>
     <string name="youtube_decryption_info">Uttrekkertilordninger hentes dynamisk fra noden du drifter selv. Nedtellingen øverst viser tiden som gjenstår til neste automatiske synkroniseringssjekk. Hvis manuelle oppdateringer forespørres mer enn 3 ganger, blokkeres de i 1 dag.</string>
@@ -419,9 +357,6 @@
     <string name="cipher_update_success">Uttrekkertilordningene er oppdatert! Lastet inn %d spillere.</string>
     <string name="cipher_update_failed">Kunne ikke oppdatere uttrekkertilordningene: %s</string>
     <string name="cipher_updating">Oppdaterer uttrekkerkonfigurasjonene…</string>
-    <string name="hours_label">Timer</string>
-    <string name="minutes_label">Minutter</string>
-    <string name="seconds_label">Sekunder</string>
     <string name="liquid_glass">Liquid Glass (beta)</string>
     <string name="player_background_liquid_glass">Liquid Glass</string>
     <string name="liquid_glass_settings">Liquid Glass (beta)</string>
@@ -452,7 +387,4 @@
     <string name="liquid_glass_performance_warning">Gjengivelse av Liquid Glass krever mye ytelse og kan redusere jevnheten og batteritiden på enkelte enheter</string>
     <string name="liquid_glass_requires_floating_nav_bar">Krever at det flytende navigasjonsfeltet er aktivert</string>
     <string name="color_picker_hex">Hex</string>
-    <string name="color_white">Hvit</string>
-    <string name="color_light_gray">Lysegrå</string>
-    <string name="color_black">Svart</string>
 </resources>

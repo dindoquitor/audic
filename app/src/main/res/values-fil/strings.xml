@@ -2,7 +2,6 @@
 <resources>
     <!-- Bottom navigation -->
     <string name="home">Home</string>
-    <string name="music">Musika</string>
     <string name="songs">Mga Kanta</string>
     <string name="artists">Mga Artista</string>
     <string name="albums">Mga Album</string>
@@ -18,7 +17,6 @@
     <string name="mood_and_genres">Kalooban at Genre</string>
     <string name="account">Account</string>
     <string name="quick_picks">Mabilisang Pili</string>
-    <string name="quick_picks_empty">Makinig ng mga kanta para makabuo ng iyong mabilisang pili</string>
     <string name="forgotten_favorites">Mga nakalimutang paborito</string>
     <string name="keep_listening">Ipagpatuloy ang pakikinig</string>
     <string name="your_youtube_playlists">Iyong mga YouTube playlist</string>
@@ -31,8 +29,6 @@
     <string name="last_week">Noong nakaraang linggo</string>
     <!-- Stats -->
     <string name="most_played_songs">Mga pinaka-pinatugtog na kanta</string>
-    <string name="most_played_artists">Mga pinaka-pinatugtog na artista</string>
-    <string name="most_played_albums">Mga pinaka-pinatugtog na album</string>
     <!-- Search -->
     <string name="search">Maghanap</string>
     <string name="search_yt_music">Maghanap sa YouTube Music…</string>
@@ -49,18 +45,13 @@
     <string name="filter_playlists">Mga Playlist</string>
     <string name="filter_community_playlists">Mga playlist ng komunidad</string>
     <string name="filter_featured_playlists">Mga tampok na playlist</string>
-    <string name="filter_bookmarked">Mga Na-bookmark</string>
     <string name="no_results_found">Walang nakitang resulta</string>
     <!-- Library -->
-    <string name="library_song_empty">Lalabas dito ang mga kanta sa library</string>
     <string name="library_artist_empty">Lalabas dito ang mga artista sa library</string>
     <string name="library_album_empty">Lalabas dito ang mga album sa library</string>
-    <string name="library_playlist_empty">Lalabas dito ang iyong mga playlist</string>
     <!-- Artist screen -->
-    <string name="from_your_library">Mula sa iyong library</string>
     <!-- Album screen -->
     <string name="other_versions">Iba pang bersyon</string>
-    <string name="album_description_placeholder">Ito ay pansamantalang paglalarawan para sa album. Siyahan sa pakikinig sa mga track sa ibaba!</string>
     <!-- Playlist -->
     <string name="liked_songs">Mga kantang nagustuhan</string>
     <string name="downloaded_songs">Mga na-download na kanta</string>
@@ -84,9 +75,7 @@
     <string name="play_next">I-play ang susunod</string>
     <string name="add_to_queue">Idagdag sa queue</string>
     <string name="add_to_library">Idagdag sa library</string>
-    <string name="add_all_to_library">Idagdag lahat sa library</string>
     <string name="remove_from_library">Alisin sa library</string>
-    <string name="remove_all_from_library">Alisin lahat sa library</string>
     <string name="action_download">I-download</string>
     <string name="downloading">Nagda-download</string>
     <string name="saving">Sine-save</string>
@@ -105,7 +94,6 @@
     <string name="delete">Burahin</string>
     <string name="remove_from_history">Alisin sa kasaysayan</string>
     <string name="remove_from_playlist">Alisin sa playlist</string>
-    <string name="remove_from_queue">Alisin sa queue</string>
     <string name="search_online">Maghanap online</string>
     <string name="action_sync">I-sync</string>
     <string name="advanced">Advanced</string>
@@ -129,10 +117,8 @@
     <string name="volume">Volume</string>
     <string name="file_size">Laki ng file</string>
     <string name="unknown">Hindi alam</string>
-    <string name="copied">Kinopya sa clipboard</string>
     <string name="hide_status_bar_on_fullscreen">Itago ang status bar sa fullscreen</string>
     <string name="hide_status_bar_on_fullscreen_desc">Itago ang status bar kapag aktibo ang fullscreen mode ng lyrics</string>
-    <string name="edit_lyrics">I-edit ang lyrics</string>
     <string name="search_lyrics">Maghanap ng lyrics</string>
     <string name="lyrics_swipe_to_change_song">I-swipe para palitan ang kanta</string>
     <string name="lyrics_swipe_to_change_song_desc">I-swipe pakaliwa o pakanan sa seksyon ng artista at pangalan ng kanta sa full-screen na lyrics para palitan ang kanta</string>
@@ -141,17 +127,10 @@
     <string name="edit_song">I-edit ang kanta</string>
     <string name="song_title">Pamagat ng kanta</string>
     <string name="song_artists">Mga artista ng kanta</string>
-    <string name="error_song_title_empty">Hindi maaaring walang laman ang pamagat ng kanta.</string>
-    <string name="error_song_artist_empty">Hindi maaaring walang laman ang artista ng kanta.</string>
     <string name="save">I-save</string>
-    <string name="choose_playlist">Pumili ng playlist</string>
     <string name="edit_playlist">I-edit ang playlist</string>
     <string name="create_playlist">Lumikha ng playlist</string>
-    <string name="playlist_name">Pangalan ng playlist</string>
-    <string name="error_playlist_name_empty">Hindi maaaring walang laman ang pangalan ng playlist.</string>
-    <string name="edit_artist">I-edit ang artista</string>
     <string name="artist_name">Pangalan ng artista</string>
-    <string name="error_artist_name_empty">Hindi maaaring walang laman ang pangalan ng artista.</string>
     <string name="duplicates">Mga duplicate</string>
     <string name="skip_duplicates">Laktawan ang mga duplicate</string>
     <string name="add_anyway">Idagdag pa rin</string>
@@ -193,7 +172,6 @@
         <item quantity="other">%d APK natagpuan</item>
     </plurals>
     <!-- Snackbar -->
-    <string name="playlist_imported">Na-import ang playlist</string>
     <string name="removed_song_from_playlist">Inalis ang \"%s\" mula sa playlist</string>
     <string name="playlist_synced">Na-sync ang playlist</string>
     <string name="undo">I-undo</string>
@@ -211,9 +189,7 @@
     <string name="error_unknown">Hindi kilalang error</string>
     <!-- Player action -->
     <string name="action_like">Gusto</string>
-    <string name="action_like_all">Gustuhin lahat</string>
     <string name="action_remove_like">Alisin ang gusto</string>
-    <string name="action_remove_like_all">Alisin lahat ng gusto</string>
     <string name="action_shuffle_on">Bukas ang shuffle</string>
     <string name="action_shuffle_off">Sarado ang shuffle</string>
     <string name="repeat_mode_off">Naka-off ang repeat mode</string>
@@ -232,18 +208,11 @@
     <string name="theme_colors">Tema at Mga Kulay</string>
     <string name="theme_mode">Mode ng Tema</string>
     <string name="color_palette">Paleta ng Kulay</string>
-    <string name="use_system_colors">Gamitin ang mga kulay ng system</string>
     <string name="enable_dynamic_theme">I-enable ang dynamic na tema</string>
-    <string name="dark_theme">Madilim na tema</string>
-    <string name="dark_theme_on">Bukas</string>
     <string name="dark_theme_off">Sarado</string>
     <string name="dark_theme_follow_system">Sumunod sa system</string>
-    <string name="pure_black">Purong itim</string>
-    <string name="customize_navigation_tabs">I-customize ang mga navigation tab</string>
     <string name="player">Player</string>
-    <string name="player_text_alignment">Pag-align ng teksto ng player</string>
     <string name="lyrics_text_position">Posisyon ng text ng lyrics</string>
-    <string name="sided">Nakasideline</string>
     <string name="left">Kaliwa</string>
     <string name="center">Gitna</string>
     <string name="right">Kanana</string>
@@ -260,26 +229,19 @@
     <string name="action_logout">Mag-log out</string>
     <string name="action_login">Mag-log in</string>
     <string name="login">Mag-login</string>
-    <string name="show_audio_quality_badge">Ipakita ang badge ng kalidad ng musika</string>
     <string name="not_logged_in">Hindi naka-log in</string>
-    <string name="login_failed">Nabigo ang pag-login</string>
     <string name="content_language">Default na wika ng nilalaman</string>
     <string name="content_country">Default na bansa ng nilalaman</string>
     <string name="system_default">Default ng system</string>
     <string name="enable_proxy">I-enable ang proxy</string>
     <string name="proxy_type">Uri ng proxy</string>
     <string name="proxy_url">URL ng proxy</string>
-    <string name="restart_to_take_effect">I-restart para magkabisa</string>
     <string name="player_and_audio">Player at audio</string>
     <string name="audio_quality">Kalidad ng audio</string>
     <string name="network_ip_version">Bersyon ng IP ng network</string>
     <string name="ip_version_auto">Awtomatiko</string>
     <string name="ip_version_ipv4">Puwersahang IPv4</string>
     <string name="ip_version_ipv6">Puwersahang IPv6</string>
-    <string name="audio_quality_auto">Awtomatiko</string>
-    <string name="audio_quality_high">Mataas</string>
-    <string name="audio_quality_low">Mababa</string>
-    <string name="audio_quality_lossless">Musikang walang pagkawala</string>
     <string name="queue">Queue</string>
     <string name="persistent_queue">Persistent queue</string>
     <string name="persistent_queue_desc">I-restore ang iyong huling queue kapag nag-start ang app</string>
@@ -292,17 +254,14 @@
     <string name="stop_music_on_task_clear">Ihinto ang musika sa pag-clear ng gawain</string>
     <string name="equalizer">Equalizer</string>
     <string name="storage">Storage</string>
-    <string name="cache">Cache</string>
     <string name="image_cache">Cache ng Imahe</string>
     <string name="song_cache">Cache ng Kanta</string>
-    <string name="max_cache_size">Pinakamataas na laki ng cache</string>
     <string name="unlimited">Walang limitasyon</string>
     <string name="clear_all_downloads">I-clear ang lahat ng download</string>
     <string name="max_image_cache_size">Pinakamataas na laki ng cache ng imahe</string>
     <string name="clear_image_cache">I-clear ang cache ng imahe</string>
     <string name="max_song_cache_size">Pinakamataas na laki ng cache ng kanta</string>
     <string name="clear_song_cache">I-clear ang cache ng kanta</string>
-    <string name="size_used">%s ang nagamit</string>
     <string name="clear_downloaded_updates">I-clear ang mga na-download na update</string>
     <string name="clear_downloaded_updates_desc">Alisin ang mga na-download na APK file upang magbakante ng espasyo</string>
     <string name="privacy">Privacy</string>
@@ -314,43 +273,29 @@
     <string name="pause_search_history">I-pause ang kasaysayan ng paghahanap</string>
     <string name="clear_search_history">I-clear ang kasaysayan ng paghahanap</string>
     <string name="clear_search_history_confirm">Sigurado ka bang gusto mong i-clear ang lahat ng kasaysayan ng paghahanap?</string>
-    <string name="use_login_for_browse">Gamitin ang pag-login para sa pag-browse ng nilalaman</string>
-    <string name="use_login_for_browse_desc">Maaaring makaapekto ito sa kung anong nilalaman ang iyong nakikita at halimbawa ay nagpapakita ng mga premium-only na album kung naka-log in ka gamit ang Premium account</string>
     <string name="disable_screenshot">Huwag paganahin ang screenshot</string>
     <string name="disable_screenshot_desc">Kapag naka-on ang opsyong ito, hindi pinagagana ang mga screenshot at ang view ng app sa Recents.</string>
     <string name="enable_lrclib">I-enable ang LrcLib lyrics provider</string>
     <string name="enable_kugou">I-enable ang KuGou lyrics provider</string>
     <string name="hide_explicit">Itago ang malalaswang nilalaman</string>
     <string name="backup_restore">I-backup at ibalik</string>
-    <string name="action_backup">I-backup</string>
-    <string name="action_restore">I-restore</string>
-    <string name="imported_playlist">Na-import na playlist</string>
     <string name="backup_create_success">Matagumpay na nagawa ang backup</string>
     <string name="backup_create_failed">Hindi magawa ang backup</string>
     <string name="restore_failed">Nabigo ang pag-restore ng backup</string>
     <string name="discord_integration">Pagsasama sa Discord</string>
-    <string name="discord_information">Gumagamit ang audicmusic ng KizzyRPC library upang itakda ang katayuan ng iyong Discord account. Kabilang dito ang paggamit ng Discord Gateway connection, na maaaring ituring na paglabag sa TOS ng Discord. Gayunpaman, walang kilalang mga kaso ng mga user account na sinuspinde dahil sa kadahilanang ito. Gamitin sa iyong sariling peligro.\n\naudicmusic ay kukuha lamang ng iyong token, at lahat ng iba ay naka-imbak nang lokal.</string>
     <string name="dismiss">I-dismiss</string>
     <string name="options">Mga Opsyon</string>
     <string name="preview">Silipin</string>
     <string name="enable_discord_rpc">I-enable ang Rich Presence</string>
     <string name="about">Tungkol sa</string>
-    <string name="app_version">Bersyon ng app</string>
-    <string name="new_version_available">May bagong bersyon na available</string>
-    <string name="translation_models">Mga Modelo ng Pagsasalin</string>
-    <string name="clear_translation_models">I-clear ang mga modelo ng pagsasalin</string>
     <string name="bluetooth_permission_required">Kinakailangan ang pahintulot ng Bluetooth upang matuklasan ang mga audio device.</string>
-    <string name="streaming_to">Nag-stream sa</string>
     <string name="this_phone">Ang teleponong ito</string>
     <string name="wired_headphones">May wire na headphone</string>
     <string name="hdmi">HDMI</string>
     <string name="phone_speaker">Speaker ng telepono</string>
     <string name="audio_quality_title">Kalidad ng Musika</string>
-    <string name="battery_content_desc">Antas ng Baterya</string>
     <string name="done">Tapos na</string>
     <string name="audio_devices">Mga audio device</string>
-    <string name="bluetooth_headphones">Bluetooth headphone</string>
-    <string name="license">GNU General Public License v3.0</string>
     <string name="standard_lyrics_blur">Karaniwang blur ng lyrics</string>
     <string name="listen_together_smart_resync">Smart Network Resync</string>
     <string name="listen_together_smart_resync_desc">Awtomatikong humabol sa host pagkatapos ng pagkawala ng koneksyon</string>
@@ -388,11 +333,6 @@
     <string name="export_successful">Matagumpay na na-export ang playlist</string>
     <string name="activity_history">Buod ng Pakikinig</string>
     <string name="total_listening_time">Kabuuang Oras ng Pakikinig</string>
-    <string name="unique_songs">Mga Natatanging Kanta</string>
-    <string name="unique_artists">Mga Natatanging Artist</string>
-    <string name="unique_albums">Mga Natatanging Album</string>
-    <string name="selected_period">Napiling Panahon</string>
-    <string name="hours_minutes_format">%1$d oras %2$d min</string>
     <string name="content_sponsor_block">SponsorBlock (Awtomatikong laktawan)</string>
     <string name="content_sponsor_block_desc">Awtomatikong laktawan ang mga sponsorship, intro, at bahaging walang musika sa mga video</string>
     <string name="spotify_import_by_link">Mag-import ng playlist gamit ang link</string>
@@ -422,8 +362,6 @@
     <string name="set_listenbrainz_token">Itakda ang ListenBrainz Token</string>
     <string name="youtube_decryption_settings">Audic Extractor</string>
     <string name="youtube_decryption_desc">I-configure ang mga setting ng extractor</string>
-    <string name="youtube_decryption_support">Audic Extractor</string>
-    <string name="youtube_decryption_support_desc">Awtomatikong kinukuha ang mga configuration ng pag-playback sa YouTube. Naka-lock sa Aktibo.</string>
     <string name="force_update_cipher">Sapilitang I-update ang mga Configuration</string>
     <string name="force_update_cipher_desc">I-download ang pinakabagong override mapping ng extractor. Limitado sa 3 update bawat araw.</string>
     <string name="youtube_decryption_info">Dinamikong kinukuha ang mga mapping ng extractor mula sa iyong self-hosted node. Ipinapakita ng countdown sa itaas ang natitirang oras bago ang susunod na awtomatikong pagsusuri sa pag-synchronize. Kapag hiniling ang manu-manong pag-update nang higit sa 3 beses, iba-block ito sa loob ng 1 araw.</string>
@@ -432,9 +370,6 @@
     <string name="cipher_update_success">Na-update ang mga mapping ng extractor! Nag-load ng %d player.</string>
     <string name="cipher_update_failed">Nabigong i-update ang mga mapping ng extractor: %s</string>
     <string name="cipher_updating">Ina-update ang mga configuration ng extractor…</string>
-    <string name="hours_label">Mga Oras</string>
-    <string name="minutes_label">Mga Minuto</string>
-    <string name="seconds_label">Mga Segundo</string>
     <string name="liquid_glass">Liquid Glass (Beta)</string>
     <string name="player_background_liquid_glass">Liquid Glass</string>
     <string name="liquid_glass_settings">Liquid Glass (Beta)</string>
@@ -465,7 +400,4 @@
     <string name="liquid_glass_performance_warning">Ang pag-render ng liquid glass ay nangangailangan ng mataas na performance at maaaring magpababa sa kinis ng pagtakbo at tagal ng baterya sa ilang device</string>
     <string name="liquid_glass_requires_floating_nav_bar">Kailangang naka-enable ang lumulutang na navigation bar</string>
     <string name="color_picker_hex">Hex</string>
-    <string name="color_white">Puti</string>
-    <string name="color_light_gray">Mapusyaw na Abo</string>
-    <string name="color_black">Itim</string>
 </resources>

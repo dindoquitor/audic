@@ -5,13 +5,11 @@
     <string name="stats">Statistika</string>
     <string name="mood_and_genres">Meeleolu ja žanrid</string>
     <string name="account">Kasutajakonto</string>
-    <string name="quick_picks_empty">Kiirvalikute loomiseks kuula lugusid</string>
     <string name="forgotten_favorites">Unustatud lemmikud</string>
     <string name="new_release_albums">Uued avaldatud albumid</string>
     <string name="today">Täna</string>
     <string name="yesterday">Eile</string>
     <string name="most_played_songs">Kõige rohkem esitatud lood</string>
-    <string name="most_played_artists">Kõige rohkem esitatud esinejad</string>
     <string name="search_yt_music">Otsi YouTube Musicust…</string>
     <string name="search_library">Otsi muusikakogust…</string>
     <string name="filter_library">Muusikakogu</string>
@@ -26,19 +24,15 @@
     <string name="filter_community_playlists">Kogukonna esitusloendid</string>
     <string name="filter_featured_playlists">Esiletõstetud esitusloendid</string>
     <string name="no_results_found">Tulemusi ei leidu</string>
-    <string name="library_song_empty">Muusikakogu lood saavad olema kuvatud siin</string>
     <string name="library_artist_empty">Muusikakogu esitajad saavad olema kuvatud siin</string>
     <string name="library_album_empty">Muusikakogu albumid saavad olema kuvatud siin</string>
-    <string name="library_playlist_empty">Muusikakogu esitusloendid saavad olema kuvatud siin</string>
     <string name="remove_download_playlist_confirm">Kas sa kindlasti soovid kõik „%s“ esitusloendi lood eemaldada allalaaditud lugude andmekogust?</string>
     <string name="delete_playlist_confirm">Kas sa kindlasti soovid kustutada „%s“ esitusloendi?</string>
     <string name="retry">Proovi uuesti</string>
     <string name="radio">Raadio</string>
     <string name="shuffle">Sega lood</string>
     <string name="edit">Muuda</string>
-    <string name="add_all_to_library">Lisa kõik muusikakogusse</string>
     <string name="remove_from_library">Eemalda muusikakogust</string>
-    <string name="remove_all_from_library">Eemalda kõik muusikakogust</string>
     <string name="action_download">Laadi alla</string>
     <string name="downloading">Laadime alla</string>
     <string name="remove_download">Eemalda allalaaditu</string>
@@ -48,7 +42,6 @@
     <string name="delete">Kustuta</string>
     <string name="remove_from_history">Eemalda ajaloost</string>
     <string name="remove_from_playlist">Eemalda esitusloendist</string>
-    <string name="remove_from_queue">Eemalda esitusjärjekorrast</string>
     <string name="search_online">Otsi veebist</string>
     <string name="action_sync">Sünkroniseeri</string>
     <string name="advanced">Lisavalikud</string>
@@ -66,10 +59,7 @@
     <string name="similar_to">Sarnane nagu</string>
     <string name="this_week">Sel nädalal</string>
     <string name="last_week">Eelmisel nädalal</string>
-    <string name="most_played_albums">Kõige rohkem esitatud albumid</string>
     <string name="search">Otsi</string>
-    <string name="filter_bookmarked">Lisatud järjehoidjaks</string>
-    <string name="from_your_library">Sinu muusikakogust</string>
     <string name="other_versions">Muud versioonid</string>
     <string name="liked_songs">Meeldivaks märgitud lood</string>
     <string name="downloaded_songs">Allalaaditud lood</string>
@@ -93,12 +83,8 @@
     <string name="volume">Helitugevus</string>
     <string name="song_title">Loo pealkiri</string>
     <string name="song_artists">Loo esitaja</string>
-    <string name="error_song_title_empty">Loo pealkiri ei saa olla tühi.</string>
     <string name="create_playlist">Loo esitusloend</string>
-    <string name="playlist_name">Esitusloendi nimi</string>
-    <string name="edit_artist">Muuda esitajat</string>
     <string name="artist_name">Esitaja nimi</string>
-    <string name="error_artist_name_empty">Esitaja nimi ei saa olla tühi.</string>
     <string name="duplicates">Topeltlood</string>
     <string name="add_anyway">Lisa ikkagi</string>
     <plurals name="n_song">
@@ -130,7 +116,6 @@
         <item quantity="other">%d minutit</item>
     </plurals>
     <string name="error_no_stream">Meediavoogu pole saadaval</string>
-    <string name="action_remove_like_all">Eemalda kõik meeldivaks märkimised</string>
     <string name="action_shuffle_on">Lugude segamine on kasutusel</string>
     <string name="action_shuffle_off">Lugude segamine pole kasutusel</string>
     <string name="repeat_mode_off">Kordus pole kasutusel</string>
@@ -143,13 +128,8 @@
     <string name="appearance">Välimus</string>
     <string name="theme">Kujundus</string>
     <string name="enable_dynamic_theme">Kasuta dünaamilist kujundust</string>
-    <string name="dark_theme">Tume kujundus</string>
-    <string name="pure_black">Õige must kujundus</string>
-    <string name="customize_navigation_tabs">Kohenda vahekaarte</string>
     <string name="player">Muusikamängija</string>
-    <string name="player_text_alignment">Muusikamängija teksti joondumine</string>
     <string name="lyrics_text_position">Laulusõnade asukoht</string>
-    <string name="sided">Küljel</string>
     <string name="left">Vasakul</string>
     <string name="center">Keskel</string>
     <string name="right">Paremal</string>
@@ -164,21 +144,17 @@
     <string name="enable_proxy">Kasuta proksiserverit</string>
     <string name="proxy_type">Proksiserveri tüüp</string>
     <string name="proxy_url">Proksiserveri aadress</string>
-    <string name="restart_to_take_effect">Muudatuse jõustamiseks käivita rakendus uuesti</string>
     <string name="player_and_audio">Meediamängija ja heli</string>
     <string name="auto_load_more">Laadi automaatselt täiendavaid lugusid</string>
     <string name="storage">Failid ja meedia</string>
-    <string name="cache">Vahemälu</string>
     <string name="image_cache">Piltide vahemälu</string>
     <string name="song_cache">Lugude vahemälu</string>
-    <string name="max_cache_size">Vahemälu suuruse ülempiir</string>
     <string name="unlimited">Piiramatu</string>
     <string name="clear_all_downloads">Eemalda kõik allalaaditud lood</string>
     <string name="max_image_cache_size">Piltide vahemälu suuruse ülempiir</string>
     <string name="clear_image_cache">Eemalda vahemälust pildid</string>
     <string name="max_song_cache_size">Lugude vahemälu suuruse ülempiir</string>
     <string name="clear_song_cache">Eemalda vahemälust lood</string>
-    <string name="size_used">%s kasutusel</string>
     <string name="privacy">Privaatsus</string>
     <string name="listen_history">Kuulamiste ajalugu</string>
     <string name="pause_listen_history">Peata kuulamiste ajaloo salvestamine</string>
@@ -202,19 +178,14 @@
     <string name="codecs">Koodekid</string>
     <string name="sample_rate">Diskreetimissagedus</string>
     <string name="file_size">Faili suurus</string>
-    <string name="edit_lyrics">Muuda laulusõnu</string>
     <string name="bitrate">Bitikiirus</string>
     <string name="search_lyrics">Otsi laulusõnu</string>
     <string name="unknown">Teadmata</string>
     <string name="loudness">Valjus</string>
-    <string name="copied">Kopeeritud lõikelauale</string>
     <string name="edit_song">Muuda lugu</string>
     <string name="skip_duplicates">Jäta topeltlood vahele</string>
-    <string name="error_song_artist_empty">Loo esitaja ei saa olla tühi.</string>
     <string name="error_timeout">Aegumine</string>
     <string name="save">Salvesta</string>
-    <string name="error_playlist_name_empty">Esitusloendi nimi ei saa olla tühi.</string>
-    <string name="choose_playlist">Vali esitusloend</string>
     <string name="edit_playlist">Muuda esitusloendit</string>
     <string name="duplicates_description_single">See lugu on sinu esitusloendis juba olemas</string>
     <string name="error_unknown">Tundmatu viga</string>
@@ -229,18 +200,12 @@
         <item quantity="one">%d esitusloend</item>
         <item quantity="other">%d esitusloendit</item>
     </plurals>
-    <string name="playlist_imported">Esitusloend on imporditud</string>
     <string name="error_no_internet">Võrguühendus puudub</string>
-    <string name="action_like_all">Kõik meeldivad</string>
     <string name="action_like">Meeldib</string>
     <string name="action_remove_like">Eemalda meeldivaks märkimine</string>
     <string name="dark_theme_follow_system">Järgi süsteemi kujundust</string>
-    <string name="dark_theme_on">Kasutusel</string>
     <string name="dark_theme_off">Pole kasutusel</string>
-    <string name="audio_quality_low">Madal</string>
     <string name="audio_quality">Helikvaliteet</string>
-    <string name="audio_quality_auto">Automaatne</string>
-    <string name="audio_quality_high">Kõrge</string>
     <string name="persistent_queue">Püsiv esitusjärjekotrd</string>
     <string name="persistent_queue_desc">Rakenduse uuesti käivitamisel taasta viimatikasutatud esitusjärjekord</string>
     <string name="queue">Esitusjärjekord</string>
@@ -252,10 +217,6 @@
     <string name="auto_skip_next_on_error_desc">Taga jätkuv taasesitus</string>
     <string name="equalizer">Ekvalaiser</string>
     <string name="about">Rakenduse teave</string>
-    <string name="translation_models">Tõlkemudelid</string>
-    <string name="app_version">Rakenduse versioon</string>
-    <string name="new_version_available">Uus versioon on saadaval</string>
-    <string name="clear_translation_models">Eemalda tõlkemudelid</string>
     <string name="small">Väike</string>
     <string name="grid_cell_size">Ruudustiku elemendi suurus</string>
     <string name="big">Suur</string>
@@ -265,26 +226,17 @@
     <string name="enable_kugou">Kasuta laulusõnade kuvamiseks teenusepakkujat KuGou</string>
     <string name="hide_explicit">Peida ebasobilik sisu</string>
     <string name="backup_restore">Varukoopia ja taastamine</string>
-    <string name="action_backup">Varunda</string>
-    <string name="action_restore">Taasta</string>
-    <string name="imported_playlist">Imporditud esitusloend</string>
     <string name="backup_create_success">Varukoopia tegemine õnnestus</string>
     <string name="backup_create_failed">Varukoopia tegemine ei õnnestunud</string>
     <string name="restore_failed">Varukoopiast taastamine ei õnnestunud</string>
     <string name="discord_integration">Lõiming Discordiga</string>
-    <string name="discord_information">audicmusic kasutab Discordi kasutajakonto oleku kuvamiseks KizzyRPC teeki. See eeldab Discord Gateway ühenduse kasutamist ja seda loetakse Discordi kasutustingimuste rikkumiseks. Aga pole teada ühtegi juhust, kus kasutajakonto oleks sel põhjusel keelatud. Kasuta seda teenust omal vastutsusel.\n\naudicmusic kasutab ainult sinu tunnusluba, kõike muud hoitakse kohalikus seadmes.</string>
     <string name="options">Valikud</string>
     <string name="action_logout">Logi välja</string>
-    <string name="login_failed">Sisselogimine ei õnnestunud</string>
-    <string name="use_login_for_browse">Sisu sirvimiseks logi sisse</string>
-    <string name="use_login_for_browse_desc">See võib mõjutada mis sisu sa näed, sealhulgas kui kasutad YouTube Premium-kontot, siis YouTube Premiumi jaoks mõeldud albumeid</string>
     <string name="action_login">Logi sisse</string>
     <!-- Bottom navigation -->
-    <string name="music">Muusika</string>
     <!-- Search -->
     <string name="filter_local">Kohalikud</string>
     <!-- Album screen -->
-    <string name="album_description_placeholder">See on albumi kohatäite kirjeldus. Nautige allolevate lugude kuulamist!</string>
     <!-- Playlist -->
     <string name="you_might_also_like">Seotud esitusloend</string>
     <!-- Button -->
@@ -316,28 +268,21 @@
     <string name="theme_colors">Kujundus ja värvid</string>
     <string name="theme_mode">Kujunduse režiim</string>
     <string name="color_palette">Värvipalett</string>
-    <string name="use_system_colors">Kasuta süsteemi värve</string>
     <string name="apple_music">Apple Music</string>
-    <string name="show_audio_quality_badge">Näita helikvaliteedi märki</string>
     <string name="network_ip_version">Võrgu IP versioon</string>
     <string name="ip_version_auto">Automaatne</string>
     <string name="ip_version_ipv4">Sunni IPv4</string>
     <string name="ip_version_ipv6">Sunni IPv6</string>
-    <string name="audio_quality_lossless">Kadudeta muusika</string>
     <string name="clear_downloaded_updates">Kustuta allalaaditud uuendused</string>
     <string name="clear_downloaded_updates_desc">Allalaaditud APK-failide eemaldamine ruumi vabastamiseks</string>
     <string name="bluetooth_permission_required">Heliseadmete leidmiseks on vajalik Bluetoothi luba.</string>
-    <string name="streaming_to">Voogedastus seadmesse</string>
     <string name="this_phone">See telefon</string>
     <string name="wired_headphones">Juhtmega kõrvaklapid</string>
     <string name="hdmi">HDMI</string>
     <string name="phone_speaker">Telefoni kõlar</string>
     <string name="audio_quality_title">Muusika kvaliteet</string>
-    <string name="battery_content_desc">Aku tase</string>
     <string name="done">Valmis</string>
     <string name="audio_devices">Heliseadmed</string>
-    <string name="bluetooth_headphones">Bluetooth-kõrvaklapid</string>
-    <string name="license">GNU General Public License v3.0</string>
     <string name="standard_lyrics_blur">Tavaline laulusõnade hägustus</string>
     <string name="listen_together_smart_resync">Nutikas võrgu uuesti sünkroonimine</string>
     <string name="listen_together_smart_resync_desc">Pärast ühenduse katkemist saavuta automaatselt uuesti hostiga kooskõla</string>
@@ -375,11 +320,6 @@
     <string name="export_successful">Esitusloend edukalt eksporditud</string>
     <string name="activity_history">Kuulamise kokkuvõte</string>
     <string name="total_listening_time">Kogu kuulamisaeg</string>
-    <string name="unique_songs">Unikaalsed laulud</string>
-    <string name="unique_artists">Unikaalsed artistid</string>
-    <string name="unique_albums">Unikaalsed albumid</string>
-    <string name="selected_period">Valitud periood</string>
-    <string name="hours_minutes_format">%1$dt %2$dm</string>
     <string name="content_sponsor_block">SponsorBlock (automaatne vahelejätmine)</string>
     <string name="content_sponsor_block_desc">Jäta automaatselt vahele sponsorlus, introd ja muusikavälised osad videotest</string>
     <string name="spotify_import_by_link">Impordi esitusloend lingi kaudu</string>
@@ -409,8 +349,6 @@
     <string name="set_listenbrainz_token">Määra ListenBrainz luba</string>
     <string name="youtube_decryption_settings">Audic Extractor</string>
     <string name="youtube_decryption_desc">Konfigureeri ekstraktori seaded</string>
-    <string name="youtube_decryption_support">Audic Extractor</string>
-    <string name="youtube_decryption_support_desc">Ekstraktib automaatselt YouTube taasesituse konfiguratsioonid. Lukustatud kui aktiivne.</string>
     <string name="force_update_cipher">Sunni konfiguratsioonide värskendamine</string>
     <string name="force_update_cipher_desc">Laadi alla uusimad ekstraktori ülekirjutamise kaardistused. Piiratud 3 värskendusega päevas.</string>
     <string name="youtube_decryption_info">Ekstraktori kaardistused hangitakse dünaamiliselt sinu isemajandatud sõlmest. Üleval olev loendur näitab aega järgmise automaatse sünkroonimiskontrollini. Kui käsitsi värskendusi nõutakse rohkem kui 3 korda, blokeeritakse need 1 päevaks.</string>
@@ -419,9 +357,6 @@
     <string name="cipher_update_success">Ekstraktori kaardistused värskendatud! Laaditud %d mängijat.</string>
     <string name="cipher_update_failed">Ekstraktori kaardistuste värskendamine ebaõnnestus: %s</string>
     <string name="cipher_updating">Ekstraktori konfiguratsioonide värskendamine…</string>
-    <string name="hours_label">Tundi</string>
-    <string name="minutes_label">Minutit</string>
-    <string name="seconds_label">Sekundit</string>
     <string name="liquid_glass">Vedelklaas (beeta)</string>
     <string name="player_background_liquid_glass">Vedelklaas</string>
     <string name="liquid_glass_settings">Vedelklaas (beeta)</string>
@@ -452,7 +387,4 @@
     <string name="liquid_glass_performance_warning">Vedelklaasi renderdamine on jõudlusmahukas ja võib mõnel seadmel vähendada sujuvust ja aku kestvust</string>
     <string name="liquid_glass_requires_floating_nav_bar">Nõuab ujuva navigeerimisriba lubamist</string>
     <string name="color_picker_hex">Heks</string>
-    <string name="color_white">Valge</string>
-    <string name="color_light_gray">Helehall</string>
-    <string name="color_black">Must</string>
 </resources>

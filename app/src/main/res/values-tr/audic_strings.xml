@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="explore">Keşfet</string>
 
     <string name="local_history">Yerel</string>
     <string name="remote_history">Uzak</string>
 
     <string name="charts">Listeler</string>
     <string name="back_button_desc">Geri</string>
-    <string name="no_title">Başlık yok</string>
     <string name="unknown_artist">Bilinmeyen sanatçı</string>
-    <string name="unknown_item_type">Bilinmeyen öğe türü</string>
-    <string name="loading_charts">Listeler yükleniyor…</string>
-    <string name="retry_button">Tekrar dene</string>
-    <string name="album_cover_desc">Albüm açıklaması</string>
     <string name="top_music_videos">En Popüler Müzik Videoları</string>
     <string name="trending">Trendler</string>
     <string name="top_result">En iyi sonuç</string>
-    <string name="other_results">Diğer</string>
     <string name="album_text">Albüm</string>
 	<string name="by_text">Yazan </string>
 	<string name="artist">Sanatçı </string>
@@ -35,7 +28,6 @@
     <string name="filter_uploaded">Yüklendi</string>
     <string name="sync_playlist">Çalma listesini senkronize et</string>
     <string name="sync_disabled">Senkronizasyon devre dışı</string>
-    <string name="elements_selected">%1$d Öğe seçildi</string>
     <string name="allows_for_sync_witch_youtube">Not: Bu, YouTube Music ile senkronizasyona izin verir. Sonradan DEĞİŞTİRİLEMEZ.</string>
     <string name="generating_image">Görüntü oluşturuluyor</string>
     <string name="please_wait">Lütfen bekleyin</string>
@@ -51,8 +43,6 @@
     <string name="secondary_text_color">İkincil metin rengi</string>
     <string name="background_color">Arka plan rengi</string>
 
-    <string name="added_to_play_next">Sonra çal listesine eklendi</string>
-    <string name="added_to_queue">Kuyruğa eklendi</string>
     <string name="remove_from_cache">Önbellekten kaldır</string>
     <string name="save_album">Kaydet</string>
     <!-- Artist about section -->
@@ -84,8 +74,6 @@
 
     <string name="lyrics">Şarkı sözleri</string>
     <string name="close">Kapat</string>
-    <string name="minimum_volume">En Düşük Ses Seviyesi</string>
-    <string name="maximum_volume">En Yüksek Ses Seviyesi</string>
     <string name="hide_player_thumbnail">Oynatıcı Küçük Resmini Gizle</string>
     <string name="hide_player_thumbnail_desc">Oynatıcıdaki albüm resmini uygulama logosuyla değiştirin</string>
     <string name="thumbnail_corner_radius">Küçük Resim Köşe Yarıçapı</string>
@@ -96,49 +84,34 @@
     <string name="audicmusic_canvas_desc">Mevcut olduğunda hareketli albüm kapaklarını göster</string>
     <string name="already_in_playlist">Zaten çalma listesinde:</string>
 
-    <plurals name="n_element">
-        <item quantity="one">1 öğe</item>
-        <item quantity="other">%d öğe</item>
-    </plurals>
     <plurals name="n_time">
         <item quantity="one">1 kez</item>
         <item quantity="other">%d kez</item>
     </plurals>
 
-    <string name="seek_backward">5 saniye geri</string>
-    <string name="seek_forward">5 saniye ileri</string>
     <string name="seek_forward_dynamic">+%1$d saniye ileri</string>
     <string name="seek_backward_dynamic">-%1$d saniye geri</string>
     <string name="seek_seconds_addup">Kademeli atlama</string>
     <string name="seek_seconds_addup_description">Eğer etkinleştirilirse, her ileri/geri sarma atlamasında kademeli olarak fazladan 5 saniye ekler</string>
 
-    <string name="continue_playing_next_in_queue">Sıradakini çalmaya devam et</string>
     <string name="next_in_queue">Sıradaki</string>
-    <string name="upcoming_recommendations">Gelecek Öneriler</string>
     <string name="continue_playing">Çalmaya Devam Et</string>
     <string name="similar_content">Benzer içerik</string>
-
-    <string name="login_settings">Giriş ayarları</string>
-    <string name="general_settings">Genel ayarlar</string>
 
     <string name="player_background_style">Oynatıcı arka plan stili</string>
     <string name="player_background_solid">Katı</string>
     <string name="follow_theme">Temayı takip et</string>
     <string name="gradient">Gradyan</string>
     <string name="glow_animated">Animasyonlu parlama</string>
-    <string name="new_player_design">Yeni oynatıcı tasarımı</string>
-    <string name="new_mini_player_design">Yeni mini oynatıcı tasarımı</string>
     <string name="player_background_blur">Bulanıklık</string>
     <string name="player_buttons_style">Oynatıcı düğme renkleri</string>
     <string name="default_style">Varsayılan</string>
     <string name="primary_color_style">Ana renk</string>
     <string name="tertiary_color_style">Üçüncül renk</string>
-    <string name="secondary_color_style">İkincil</string>
     <string name="display_density">Ekran yoğunluğu</string>
     <string name="restart">Yeniden başlat</string>
     <string name="restart_required">Yeniden başlatma gerekli</string>
     <string name="density_restart_message">Ekran yoğunluğu değişikliği uygulamayı yeniden başlattıktan sonra etkili olacaktır. Şimdi yeniden başlatmak ister misiniz?</string>
-    <string name="enable_wavy_slider">Dalgalı kaydırıcıyı etkinleştir</string>
     <string name="wavy">Dalgalı</string>
     <string name="enable_swipe_thumbnail">Şarkıyı değiştirmek için kaydırmayı etkinleştir</string>
     <string name="swipe_song_to_add">Şarkıyı kuyruğa eklemek için sola, sonra çalmak için sağa kaydırın</string>
@@ -153,7 +126,6 @@
     <string name="enable_simpmusic_desc">Eşitlenmiş sözcükler için SimpMusic sağlayıcısını etkinleştir</string>
     <string name="auto_scroll">Yeniden senkronize et</string>
     <string name="slim">İnce</string>
-    <string name="slim_navbar">İnce alt gezinme çubuğu</string>
     <string name="auto_playlists">Otomatik Çalma Listeleri</string>
     <string name="show_liked_playlist">\"Beğenilen\" Çalma Listesini Göster</string>
     <string name="show_downloaded_playlist">\"İndirilen\" Çalma Listesini Göster</string>
@@ -164,18 +136,14 @@
     <string name="shuffle_playlist_first_desc">Şarkıları karıştırırken, önce orijinal çalma listesindeki/albümdeki tüm şarkıları, ardından benzer içerikteki şarkıları çalın</string>
     <string name="prevent_duplicate_tracks_in_queue">Aynı şarkının sıraya tekrar eklenmesini önle</string>
     <string name="prevent_duplicate_tracks_in_queue_desc">Eğer listeye yeni bir şarkı eklenmişse ve daha önceden de listede varsa o şarkıyı kaldır</string>
-    <string name="show_wrapped_card">Özet kartını göster</string>
     <string name="skip_silence_desc">Şarkıların sessiz kısımlarını hızlıca atla</string>
     <string name="skip_silence_instant">Sessiz kısımları hemen atla</string>
     <string name="skip_silence_instant_desc">Şarkı hızını arttırmadan şarkının sessiz kısımları atla</string>
 
-    <string name="google">Google</string>
-    <string name="discord">Discord</string>
     <string name="advanced_login">Token ile giriş yap</string>
     <string name="token_hidden">Tokeni göstermek için dokunun</string>
     <string name="token_shown">Kopyalamak veya düzenlemek için tekrar dokunun</string>
     <string name="token_adv_login_description">Bu, GELİŞMİŞ bir giriş yöntemidir. Web portalına alternatif olarak, giriş tokeninizi buraya doğrudan girebilir veya güncelleyebilirsiniz. Örneğin, bu, birden fazla cihazda girişi hızlandırabilir. Lütfen, uygulamanın ayrıştıramadığı geçersiz token formatlarının kabul edilmeyeceğini unutmayın</string>
-    <string name="ytm_sync">YouTube Music hesabınızla otomatik olarak senkronize et</string>
     <string name="yt_sync">Hesapla otomatik olarak senkronize et</string>
     <string name="more_content">Daha fazla içerik</string>
     
@@ -193,40 +161,25 @@
     <string name="set_quick_picks">Hızlı seçimleri ayarla</string>
     <string name="last_song_listened">Son dinlenen şarkıya göre</string>
     <string name="app_language">Uygulama dili</string>
-    <string name="configure_app_language">Uygulama dillerini yapılandır</string>
-    <string name="intent_app_language_not_found">Uygulama dili ayarları bulunamadı, lütfen manuel olarak yapılandırın</string>
-    <string name="open_supported_links">Desteklenen bağlantıları varsayılan olarak aç</string>
-    <string name="configure_supported_links">Desteklenen bağlantıları yapılandır</string>
-    <string name="intent_supported_links_not_found">Desteklenen bağlantı ayarları bulunamadı, lütfen manuel olarak yapılandırın</string>
-    <string name="set_first_lyrics_provider">Tercih edilen şarkı sözü sağlayıcısı</string>
     <string name="config_proxy">Proxy ayarla</string>
     <string name="proxy_username">Proxy kullanıcı adı</string>
     <string name="proxy_password">Proxy şifresi</string>
     <string name="enable_authentication">Kimlik doğrulamayı etkinleştir</string>
-    <string name="discord_use_details">Durum yerine ayrıntıları kullan</string>
-    <string name="discord_use_details_description">Sanatçı adları yerine şarkı adını belirgin şekilde göster</string>
 
-    <string name="audio_quality_max">Maksimum (beta)</string>
     <string name="enable_similar_content">Benzer içeriği etkinleştir</string>
     <string name="similar_content_desc">Kuyruğun sonuna ulaşıldığında otomatik olarak daha fazla benzer şarkı ekleyin</string>
     <string name="persistent_shuffle_title">Sürekli karıştırma</string>
     <string name="persistent_shuffle_desc">Yeni şarkılar veya çalma listeleri başlatırken karışık çalma özelliğini açık tutun</string>
     <string name="remember_shuffle_and_repeat">Karışık listeyi hatırla ve tekrarla</string>
     <string name="remember_shuffle_and_repeat_desc">Karışık listeyi hatırla ve uygulama yeniden başlatıldığında tekrarla</string>
-    <string name="min_playback_duration_title">Minimum çalma süresi</string>
-    <string name="min_playback_duration_description">Bir şarkının \"çalındı\" olarak kabul edilmesi için çalınması gereken minimum süre</string>
     <string name="percentage_format">%d%%</string>
-    <string name="minimum_playback_duration">Minimum çalma süresi</string>
 
-    <string name="import_online">Bir \"m3u\" oynatma listesi içe aktar</string>
-    <string name="import_csv">Bir \"csv\" oynatma listesi içe aktar</string>
     <string name="playlist_add_local_to_synced_note">Not: Yerel şarkıların, senkronize edilmiş/uzaktan çalma listelerine eklenmesi desteklenmemektedir. Bunun dışındaki herhangi bir kombinasyon geçerlidir</string>
 
     <string name="auto_download_on_like">Beğendiğimde otomatik indir</string>
     <string name="auto_download_on_like_desc">Beğenilen şarkıları otomatik indir</string>
 
     <string name="swipe_sensitivity">Mini oynatıcı kaydırma hassasiyeti</string>
-    <string name="swipe_sensitivity_desc">Şarkı değiştirmek için yapılan kaydırma hareketlerinin hassasiyetini ayarla</string>
     <string name="sensitivity_percentage">%1$d%%</string>
 
     <string name="clear_song_cache_dialog">Tüm önbelleğe alınan şarkıları temizlemek istediğinizden emin misiniz?</string>
@@ -235,13 +188,7 @@
 
     <string name="disable">Devre dışı bırak</string>
 
-    <string name="pause_remote_listen_history">YouTube Music ile dinleme geçmişini paylaşmayı duraklat</string>
     <string name="not_logged_in_youtube">YouTube\'a giriş yapılmadı</string>
-
-    <string name="default_links">Desteklenen bağlantıları aç</string>
-    <string name="open_app_settings_error">Uygulama ayarları açılamadı</string>
-
-    <string name="release_notes">Sürüm notları</string>
 
     <string name="all_time">Tüm zamanlar</string>
     <string name="past_24_hours">Son 24 saat</string>
@@ -250,19 +197,13 @@
     <string name="past_year">Son yıl</string>
     <string name="top_length">Benim En İyiler listesi uzunluğu</string>
     <string name="history_duration">Geçmiş süresi</string>
-    <string name="information">Bilgi</string>
     <string name="description">Açıklama</string>
-    <string name="numbers">Sayılar</string>
     <string name="subscribers">Aboneler</string>
     <string name="views">Görüntülemeler</string>
     <string name="likes">Beğeniler</string>
     <string name="dislikes">Beğenilmeyenler</string>
     <string name="subscribe">Abone ol</string>
     <string name="subscribed">Abone olundu</string>
-    <string name="playlist_not_found">Oynatma listesi bulunamadı</string>
-    <string name="playlist_not_found_desc">İstenen oynatma listesi yüklenemiyor</string>
-    <string name="empty_playlist">Boş oynatma listesi</string>
-    <string name="empty_playlist_desc">Bu oynatma listesi hiç şarkı içermiyor</string>
     <plurals name="seconds">
         <item quantity="one">1 saniye</item>
         <item quantity="other">%d saniye</item>
@@ -287,7 +228,6 @@
     <string name="lyrics_romanization_cyrillic">Kiril</string>
     <string name="lyrics_romanize_title">Latinleştir</string>
     <string name="lyrics_romanization">Şarkı sözlerini Latinleştir</string>
-    <string name="romanization">Latinleştirme</string>
     <string name="lyrics_romanize_japanese">Japonca şarkı sözlerini Latinleştir</string>
     <string name="lyrics_romanize_korean">Korece şarkı sözlerini Latinleştir</string>
     <string name="lyrics_romanize_chinese">Çince şarkı sözlerini Latinleştir</string>
@@ -303,23 +243,15 @@
     <string name="line_by_line_option_desc">Kiril dili, şarkının tamamı yerine satır satır algılanacaktır.</string>
     <string name="line_by_line_dialog_title">Emin misiniz?</string>
     <string name="line_by_line_dialog_desc">Bu, başarılı veya başarısız olabilecek deneysel bir özelliktir.\n\nVarsayılan olarak, dil tüm şarkı üzerinden belirlenir; ancak bu seçenek açık olduğunda, dil satır satır belirlenecektir. Bu sayede çok dilli şarkılar da çalışabilir, ama dil her zaman doğru olmayabilir (örneğin, Ukraynaca bir satır Ukraynaca’ya özgü harf içermiyorsa, yanlışlıkla Rusça olarak Latinleştirilebilir).\n\nSorun yaşamıyorsanız, bu seçeneği kapalı bırakmanız önerilir.</string>
-    <string name="line_by_line_dialog_enable">Etkinleştir</string>
     <string name="romanize_current_track">Geçerli parçayı Latinleştir</string>
 
     <!-- Lyrics Offset Settings -->
     <string name="lyrics_offset">Şarkı sözünün gecikme süresi</string>
 
     <!-- Material 3 Settings Sections -->
-    <string name="settings_section_ui">Arayüz</string>
-    <string name="settings_section_privacy">Gizlilik ve Güvenlik</string>
-    <string name="settings_section_player">Oynatıcı ve Medya</string>
     <string name="settings_section_player_content">Oynatıcı ve İçerik</string>
-    <string name="settings_section_storage">Depolama ve Veri</string>
-    <string name="settings_section_system">Sistem ve Hakkında</string>
 
     <!-- Updater -->
-    <string name="updater">Güncelleyici</string>
-    <string name="check_for_updates">Güncellemeleri otomatik olarak kontrol et</string>
     <string name="update_available_title">Güncelleme mevcut</string>
     <string name="update_channel_name">Uygulama güncellemeleri</string>
     <string name="update_channel_desc">Yeni sürümlerle ilgili bildirimler</string>
@@ -368,10 +300,7 @@
     <string name="delete_desc">Bu öğeyi kalıcı olarak kaldır</string>
     <string name="advanced_desc">Şarkının temposunu ve perdesini değiştirin</string>
     <string name="equalizer_desc">Ses ekolayzırını ayarlayın</string>
-    <string name="enable_dynamic_icon">Dinamik simgeyi etkinleştir</string>
     <string name="mini_player">Mini oynatıcı</string>
-    <string name="pure_black_mini_player">Saf siyah mini oynatıcı</string>
-    <string name="mini_player_outline">Mini oynatıcı taslağı</string>
     <string name="cache_size_warning_title">Bekle!</string>
     <string name="cache_size_warning_message">Uygulamanın şu an kullandığı boyuttan (%1$s) daha küçük bir önbellek sınırı seçtiniz. Devam ederseniz uygulama, yeni sınıra uymak için önbelleğe alınmış bazı %2$s içeriklerini silebilir. Yine de devam edilsin mi?</string>
     <string name="cache_size_warning_confirm">Devam et</string>
@@ -391,46 +320,6 @@
     <string name="lyrics_v2_fluid">Şarkı Sözleri V2 (Akıcı)</string>
     <string name="lyrics_text_size">Şarkı sözü metin boyutu</string>
     <string name="lyrics_line_spacing">Şarkı sözü satır aralığı</string>
-    <string name="album_art_for">%s için albüm kapağı</string>
-    <string name="wrapped_total_albums_title">Şunları dinledin</string>
-    <string name="wrapped_total_albums_subtitle">benzersiz albümler</string>
-    <string name="wrapped_top_album_title">En iyi albümünüz</string>
-    <string name="wrapped_playlist_ready">Kişisel çalma listeniz hazır</string>
-    <string name="wrapped_top_5_albums_title">En iyi 5 albümünüz</string>
-    <string name="wrapped_album_listening_time">Bu albümü %d dakika dinledin</string>
-    <string name="wrapped_album_listening_time_minutes">%d dakika</string>
-    <string name="wrapped_no_data">Veri yok</string>
-    <string name="wrapped_top_5_artists_title">Yılın en iyi sanatçıları</string>
-    <string name="wrapped_artist_image_content_description">Sanatçı resmi</string>
-    <string name="wrapped_artist_listening_time">%d dakika</string>
-    <string name="wrapped_top_5_songs_title">Yılın en iyi şarkıları</string>
-    <string name="wrapped_top_song_album_art_content_description">Albüm görseli</string>
-    <string name="wrapped_top_artist_title">Yılın en iyi sanatçısı</string>
-    <string name="wrapped_top_artist_image_content_description">En iyi sanatçı görseli</string>
-    <string name="wrapped_top_artist_listening_time">Onları %d dakika boyunca dinlediniz</string>
-    <string name="wrapped_top_song_title">En çok çaldığınız şarkı</string>
-    <string name="wrapped_top_song_listening_time">%d dakika boyunca dinlediniz</string>
-    <string name="wrapped_total_artists_title">Şunları dinlediniz</string>
-    <string name="wrapped_total_artists_subtitle">benzersiz sanatçılar</string>
-    <string name="wrapped_total_songs_title">Şunları dinlediniz</string>
-    <string name="wrapped_total_songs_subtitle">benzersiz şarkılar</string>
-    <string name="wrapped_intro_title">audicmusic</string>
-    <string name="wrapped_intro_subtitle">Dinlediklerinize göz atmanın zamanı geldi</string>
-    <string name="wrapped_intro_button">hadi başlayalım!</string>
-    <string name="wrapped_end_thanks">audicmusic ile dinlediğiniz için teşekkürler!</string>
-    <string name="wrapped_end_create_playlist">Özet Çalma Listeni Oluştur</string>
-    <string name="wrapped_end_creating_playlist">Oluşturuluyor...</string>
-    <string name="wrapped_end_playlist_saved">Çalma Listesi Kaydedildi</string>
-    <string name="wrapped_logo_content_description">audicmusic Logosu</string>
-    <string name="wrapped_year">2025</string>
-    <string name="wrapped_ready_title">ÖZETİNİZ HAZIR!</string>
-    <string name="wrapped_ready_subtitle">Bu yıl neleri sevdiğini görme zamanı.</string>
-    <string name="wrapped_thank_you">Dinlediğin için teşekkürler</string>
-    <string name="wrapped_special_thanks">audicmusic\'i oluşturduğu için MO Agamy\'ye özel teşekkürler</string>
-    <string name="wrapped_close">Özeti kapat</string>
-    <string name="wrapped_playlist_title">%s Özetin</string>
-    <string name="wrapped_create_playlist">Çalma listesi oluştur</string>
-    <string name="wrapped_playlist_saved">Çalma listesi kaydedildi</string>
 
     <!-- Equalizer UI -->
     <plurals name="profiles_count">
@@ -459,10 +348,6 @@
     <string name="plays">plays</string>
     <string name="casting_to">%s cihazına yansıtılıyor</string>
     <string name="progress_percent">İlerleme %s%%</string>
-    <string name="listening_to_audicmusic">audicmusic dinleniyor</string>
-    <string name="listen_on_youtube_music">YouTube Music\'te dinle</string>
-    <string name="visit_audicmusic">audicmusic\'i ziyaret et</string>
-    <string name="open">Aç</string>
     <string name="failed_to_create_image">Görsel oluşturulamadı: %s</string>
     <string name="copied_title">Başlık kopyalandı</string>
     <string name="copied_artist">Sanatçı kopyalandı</string>
@@ -471,9 +356,6 @@
 
     <!-- Playback errors -->
     <string name="error_playback_failed">Oynatma başarısız</string>
-    <string name="error_copied">Hata bilgisi panoya kopyalandı</string>
-    <string name="copy_error">Hatayı kopyala</string>
-    <string name="error_copy_hint">Hata bilgilerini paylaşmak geliştiricilerin hata çözümünde yardımcı olur</string>
 
     <!-- Widget strings -->
     <string name="album_art">Albüm kapağı</string>
@@ -486,29 +368,17 @@
     <string name="not_playing">Herhangi bir şarkı oynatılmıyor</string>
     <string name="tap_to_play">audicmusic\'i açmak için tıkla</string>
     <string name="widget_description">Oynatıcı widgetı için arkaplan kontrolcüsü</string>
-    <string name="queue_widget_description">Sıra önizlemeli oynatıcı</string>
     <string name="turntable_widget_description">Şarkıyı oynatmak ve değiştirmek yapılmış için dairesel müzik widget\'ı</string>
     <string name="widget_music_player">Müzik oynatıcı</string>
     <string name="widget_turntable">Dönen plak</string>
 
     <!-- Player Client Settings -->
-    <string name="player_client">Oynatıcı istemcisi</string>
-    <string name="player_client_android_vr">Android VR</string>
-    <string name="player_client_android_vr_desc">En hızlı seçenektir. İmza çözme olmadan doğrudan akış URL’lerini kullanır. Çoğu kullanıcı için önerilir.</string>
-    <string name="player_client_web_remix">Web Remiks</string>
-    <string name="player_client_web_remix_desc">Daha yavaş ancak premium formatları destekler. JavaScript imza çözme işlemi kullandığından oynatma başlangıcına yaklaşık ~5–10 saniye ekler.</string>
 
     <!-- Decryption Library Settings -->
-    <string name="decryption_library">Şifre çözme kütüphanesi</string>
-    <string name="decryption_library_newpipe">NewPipe Extractor (Resmi)</string>
-    <string name="decryption_library_newpipe_desc">Resmi TeamNewPipe kütüphanesi. YouTube\'daki değişikliklere en güncel şekilde uyum sağlar. Varsayılan olarak önerilir.Başarısız olması durumunda otomatik olarak PipePipe API\'sine geri dönüş yapılır.</string>
-    <string name="decryption_library_pipepipe_api">PipePipe API\'si</string>
-    <string name="decryption_library_pipepipe_api_desc">MetroExtractor kullanarak API tabanlı şifre çözme. Daha hızlıdır ancak harici bir API\'ye bağlıdır. Başarısız olması durumunda otomatik olarak NewPipe\'a geri döner.</string>
 
     <!-- Listen Together -->
     <string name="together">Beraber dinle</string>
     <string name="listen_together">Birlikte Dinle</string>
-    <string name="listen_together_desc">Arkadaşlarınızla gerçek zamanlı olarak müzik dinleyin</string>
     <string name="listen_together_server_url">Sunucu URL\'si</string>
     <string name="listen_together_choose_server">Sunucu seç</string>
     <string name="listen_together_custom_server">Özel sunucu</string>
@@ -523,12 +393,10 @@
     <string name="listen_together_create_room_desc">Oda oluştur ve kodunu arkadaşlarınla paylaş</string>
     <string name="listen_together_join_room">Odaya katıl</string>
     <string name="listen_together_room_code">Oda kodu</string>
-    <string name="listen_together_leave_room">Odadan ayrıl</string>
     <string name="listen_together_you_are_host">Sen sunucu sahibisin</string>
     <string name="listen_together_you_are_guest">Sen misafirsin</string>
     <string name="mute">Sesi kapat</string>
     <string name="unmute">Sesi geri aç</string>
-    <string name="listen_together_users">%d kullanıcısı odada</string>
     <string name="listen_together_join_requests">Katılma isteği</string>
     <string name="listen_together_view_logs">Logları görüntüle</string>
     <string name="listen_together_view_logs_desc">Bağlantı ve mesajların hatalarını ayıkla</string>
@@ -562,14 +430,12 @@
     <string name="creating_room">Oda oluşturuluyor…</string>
     <string name="connect">Bağlan</string>
     <string name="disconnect">Bağlantıyı kes</string>
-    <string name="reconnect">Yeniden bağlan</string>
     <string name="create">Oluştur</string>
     <string name="join">Katıl</string>
     <string name="approve">Onayla</string>
     <string name="reject">Reddet</string>
     <string name="clear">Temizle</string>
     <string name="copy">Kopyala</string>
-    <string name="change">Değiştir</string>
     <string name="copied_to_clipboard">Panoya kopyalandı</string>
     <string name="not_set">Ayarlanmadı</string>
     <string name="hosting_room">Paylaşılan oda</string>
@@ -578,7 +444,6 @@
     <string name="pending_suggestions">Bekleyen öneriler</string>
     <string name="suggest_to_host">Sunucu sahibine öner</string>
     <string name="kick_user">At</string>
-    <string name="transfer_host">Sunucuyu devret</string>
     <string name="host_label">Sunucu</string>
     <string name="you_label">Sen</string>
     <string name="connected_users">Bağlanmış kullanıcılar</string>
@@ -669,10 +534,6 @@
 
     <!-- Theme Content Descriptions -->
     <string name="cd_back">Geri</string>
-    <string name="cd_pure_black_mode">Saf Siyah modu</string>
-    <string name="cd_light_mode">Aydınlık modu</string>
-    <string name="cd_dark_mode">Karanlık modu</string>
-    <string name="cd_system_mode">Sistem modu</string>
     <string name="cd_palette_item">%1$s paleti</string>
     <string name="play_all">Tümünü oynat</string>
     <string name="enable_high_refresh_rate">Yüksek yenileme oranını aktifleştir</string>
@@ -692,9 +553,7 @@
     <string name="clear_recognition_history_confirm">Tanımlama geçmişini silmek istediğinize emin misiniz?</string>
     <string name="delete_from_history">Geçmişten sil</string>
     <string name="re_listen">Yeniden dinle</string>
-    <string name="hold_to_recognize">Müziği tanımlamak için arama tuşuna basılı tutun</string>
     <string name="play_on_app">audicmusic\'te dinle</string>
-    <string name="recognized_track">Tanımlanmış parça</string>
 
     <!-- CSV Import Strings -->
     <string name="map_csv_columns">CSV dizelerini içe aktar</string>
@@ -706,39 +565,10 @@
     <string name="importing_csv">CSV içe aktarılıyor</string>
     <string name="recently_converted">Hâli hazırda çevirilmiş</string>
     <string name="column_label">Col %d</string>
-    <string name="csv_import_failed">CSV dosyasını içe aktarırken sorun oluştur</string>
-    <string name="csv_preview_failed">CSV dosyasını önizlerken sorun oluştu</string>
 
     <!-- Discord Integration Redesign -->
-    <string name="discord_integration_settings">Discord entegrasyonu</string>
-    <string name="discord_status">Durum bilgisi</string>
-    <string name="discord_status_online">Çevrim içi</string>
-    <string name="discord_status_idle">Boşta</string>
-    <string name="discord_status_dnd">Rahatsız etme</string>
-    <string name="discord_buttons">Butonlar</string>
-    <string name="discord_button_1">1. tuş</string>
-    <string name="discord_button_2">2. tuş</string>
-    <string name="button_text">Buton yazısı</string>
-    <string name="button_visible">Görünür</string>
-    <string name="login_successful">Giriş başarılı!</string>
-    <string name="discord_information_warning">Bu özellik Discord ile veri paylaşmak ve durumunuzu belirtmek için KizzyRPC kütüphanesini kullanır. Şu anlık hesabın askıya alınması gibi bir durum gözlenmese bile Discord tarafından resmi olarak desteklenmemekte ve Kullanım Sözleşmesi\'ne aykırı olabilir. Tokeniniz sadece kendi cihazınızda olmakla beraber 3. Parti servislerle de paylaşılmamaktadır. Bunu kullanmak sizin kararınıza bırakılmıştır.</string>
     <string name="discord_activity_type">Aktivite şekli</string>
-    <string name="discord_activity_playing">Oynatılıyor</string>
-    <string name="discord_activity_listening">Dinleniliyor</string>
-    <string name="discord_activity_watching">İzleniyor</string>
-    <string name="discord_activity_competing">Rekabet</string>
-    <string name="discord_customization">Özelleştirme</string>
-    <string name="discord_button_text_variables">Değişkenler: {song_name}, {artist_name}, {album_name}</string>
-    <string name="discord_rpc_preview">Zengin Görünüm Önizlemesi</string>
-    <string name="discord_presence">Görünüm</string>
-    <string name="discord_connect_description">Ne dinlediğini paylaşmak için Discord\'a giriş yap</string>
-    <string name="discord_playing_audicmusic">audicmusic oynatılıyor</string>
-    <string name="discord_watching_audicmusic">audicmusic izlenliyor</string>
-    <string name="discord_competing_audicmusic">audicmusic\'te yarış</string>
     <string name="discord_activity_name">Aktivite adı</string>
-    <string name="discord_activity_name_description">Aktivite için özel ad (boş bırakılırsa varsayılan kullanılır)</string>
-    <string name="discord_advanced_mode">Gelişmiş seçenekler</string>
-    <string name="discord_advanced_mode_description">Zengin özelleştirme içeriklerini ayarlarda göster</string>
     <string name="speed_dial">Hızlı arama</string>
     <string name="pin_to_speed_dial">Hızlı aramaya sabitle</string>
     <string name="unpin_from_speed_dial">Hızlı aramadan kaldır</string>
@@ -753,7 +583,6 @@
     <string name="daily_discover_based_on">%1$s baz alınarak</string>
     <string name="daily_discover_for_fans_of">%1$s hayranları için</string>
     <string name="from_the_community">Topluluktan</string>
-    <string name="songs_count">%s şarkı</string>
     <string name="repeat">Tekrarla</string>
     <string name="monthly_listeners">Aylık</string>
     <string name="unlock_queue">Kuyruk Kilidini Aç</string>
@@ -763,7 +592,6 @@
     <!-- ShowMediaInfo -->
     <string name="song_info">Şarkı Bilgisi</string>
     <string name="song_info_title_label">Başlık</string>
-    <string name="song_info_format_label">Format</string>
     <string name="song_info_duration_label">Süre</string>
     <string name="song_info_itag_label">Itag</string>
     <string name="song_info_standard">Standart</string>
@@ -773,18 +601,9 @@
 
 <!--    changelog-->
     <string name="error_loading_changelog">Değişiklik günlüğü yüklenirken hata oluştu</string>
-    <string name="no_old_releases_with_changelog">Değişiklik günlüğü olan eski bir sürüm bulunamadı</string>
-    <string name="failed_to_fetch_changelog">Değişiklik günlüğü alınamadı</string>
     <string name="changelog_title">Değişiklik Günlüğü</string>
-    <string name="loading_changelog">Değişiklik günlüğü yükleniyor…</string>
     <string name="cached">Önbelleğe alındı</string>
     <string name="current">Geçerli</string>
-    <string name="old_releases">Eski Sürümler</string>
-    <string name="changelog_section">Değişiklik Günlüğü</string>
-    <string name="version_code">Sürüm kodu</string>
-    <string name="namespace">Ad alanı</string>
-    <string name="telegram_channel">Telegram</string>
-    <string name="join_telegram">Telegram kanalımıza katılın</string>
     <string name="commits_title">Commit\'ler</string>
     <string name="error_loading_commits">Bana para ödemediğiniz için mi commit\'ler yüklenemedi ?</string>
     <string name="commits">Commit\'ler</string>

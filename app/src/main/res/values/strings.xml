@@ -9,7 +9,6 @@
 <resources>
     <!-- Bottom navigation -->
     <string name="home">Home</string>
-    <string name="music">Music</string>
     <string name="songs">Songs</string>
     <string name="artists">Artists</string>
     <string name="albums">Albums</string>
@@ -26,7 +25,6 @@
     <string name="mood_and_genres">Mood and Genres</string>
     <string name="account">Account</string>
     <string name="quick_picks">Quick picks</string>
-    <string name="quick_picks_empty">Listen to songs to generate your quick picks</string>
     <string name="forgotten_favorites">Forgotten favorites</string>
     <string name="keep_listening">Keep listening</string>
     <string name="your_youtube_playlists">Your YouTube playlists</string>
@@ -41,8 +39,6 @@
 
     <!-- Stats -->
     <string name="most_played_songs">Most played songs</string>
-    <string name="most_played_artists">Most played artists</string>
-    <string name="most_played_albums">Most played albums</string>
 
     <!-- Search -->
     <string name="search">Search</string>
@@ -60,21 +56,16 @@
     <string name="filter_playlists">Playlists</string>
     <string name="filter_community_playlists">Community playlists</string>
     <string name="filter_featured_playlists">Featured playlists</string>
-    <string name="filter_bookmarked">Bookmarked</string>
     <string name="no_results_found">No results found</string>
 
     <!-- Library -->
-    <string name="library_song_empty">Library songs will show up here</string>
     <string name="library_artist_empty">Library artists will show up here</string>
     <string name="library_album_empty">Library albums will show up here</string>
-    <string name="library_playlist_empty">Your playlists will show up here</string>
 
     <!-- Artist screen -->
-    <string name="from_your_library">From your library</string>
 
     <!-- Album screen -->
     <string name="other_versions">Other versions</string>
-    <string name="album_description_placeholder">This is a placeholder description for the album. Enjoy listening to the tracks below!</string>
 
     <!-- Playlist -->
     <string name="liked_songs">Liked songs</string>
@@ -101,9 +92,7 @@
     <string name="play_next">Play next</string>
     <string name="add_to_queue">Add to queue</string>
     <string name="add_to_library">Add to library</string>
-    <string name="add_all_to_library">Add all to library</string>
     <string name="remove_from_library">Remove from library</string>
-    <string name="remove_all_from_library">Remove all from library</string>
     <string name="action_download">Download</string>
     <string name="downloading">Downloading</string>
     <string name="loading">Loading</string>
@@ -125,7 +114,6 @@
     <string name="delete">Delete</string>
     <string name="remove_from_history">Remove from history</string>
     <string name="remove_from_playlist">Remove from playlist</string>
-    <string name="remove_from_queue">Remove from queue</string>
     <string name="search_online">Search online</string>
     <string name="action_sync">Sync</string>
     <string name="advanced">Advanced</string>
@@ -151,11 +139,9 @@
     <string name="volume">Volume</string>
     <string name="file_size">File size</string>
     <string name="unknown">Unknown</string>
-    <string name="copied">Copied to clipboard</string>
     <string name="hide_status_bar_on_fullscreen">Hide status bar on fullscreen</string>
     <string name="hide_status_bar_on_fullscreen_desc">Hide the status bar when lyrics fullscreen mode is active</string>
 
-    <string name="edit_lyrics">Edit lyrics</string>
     <string name="search_lyrics">Search lyrics</string>
     <string name="lyrics_swipe_to_change_song">Swipe to change song</string>
     <string name="lyrics_swipe_to_change_song_desc">Swipe left or right in the artist and song name section in full-screen lyrics to change the song</string>
@@ -166,25 +152,18 @@
     <string name="edit_song">Edit song</string>
     <string name="song_title">Song title</string>
     <string name="song_artists">Song artists</string>
-    <string name="error_song_title_empty">Song title cannot be empty.</string>
-    <string name="error_song_artist_empty">Song artist cannot be empty.</string>
     <string name="save">Save</string>
 
-    <string name="choose_playlist">Choose playlist</string>
     <string name="edit_playlist">Edit playlist</string>
     <string name="export_as_csv">Export as CSV</string>
     <string name="export_playlist_desc">Export playlist songs to a CSV file</string>
     <string name="export_successful">Playlist exported successfully</string>
     <string name="create_playlist">Create playlist</string>
-    <string name="playlist_name">Playlist name</string>
-    <string name="error_playlist_name_empty">Playlist name cannot be empty.</string>
     <string name="modify_with_ai">Modify with AI</string>
     <string name="modify_with_ai_desc">Modify playlist using AI instructions</string>
     <string name="ai_modify_prompt_hint">e.g., Remove sad songs, add some 90s hits</string>
 
-    <string name="edit_artist">Edit artist</string>
     <string name="artist_name">Artist name</string>
-    <string name="error_artist_name_empty">Artist name cannot be empty.</string>
 
     <string name="duplicates">Duplicates</string>
     <string name="skip_duplicates">Skip duplicates</string>
@@ -228,7 +207,6 @@
     </plurals>
 
     <!-- Snackbar -->
-    <string name="playlist_imported">Playlist imported</string>
     <string name="removed_song_from_playlist">Removed \"%s\" from playlist</string>
     <string name="playlist_synced">Playlist synced</string>
     <string name="undo">Undo</string>
@@ -248,9 +226,7 @@
 
     <!-- Player action -->
     <string name="action_like">Like</string>
-    <string name="action_like_all">Like all</string>
     <string name="action_remove_like">Remove like</string>
-    <string name="action_remove_like_all">Remove all likes</string>
     <string name="action_shuffle_on">Shuffle on</string>
     <string name="action_shuffle_off">Shuffle off</string>
     <string name="repeat_mode_off">Repeat mode off</string>
@@ -272,18 +248,11 @@
     <string name="theme_colors">Theme &amp; Colors</string>
     <string name="theme_mode">Theme Mode</string>
     <string name="color_palette">Color Palette</string>
-    <string name="use_system_colors">Use system colors</string>
     <string name="enable_dynamic_theme">Enable dynamic theme</string>
-    <string name="dark_theme">Dark theme</string>
-    <string name="dark_theme_on">On</string>
     <string name="dark_theme_off">Off</string>
     <string name="dark_theme_follow_system">Follow system</string>
-    <string name="pure_black">Pure black</string>
-    <string name="customize_navigation_tabs">Customize navigation tabs</string>
     <string name="player">Player</string>
-    <string name="player_text_alignment">Player text alignment</string>
     <string name="lyrics_text_position">Lyrics text position</string>
-    <string name="sided">Sided</string>
     <string name="left">Left</string>
     <string name="center">Center</string>
     <string name="right">Right</string>
@@ -297,11 +266,6 @@
 
     <string name="activity_history">Listening Summary</string>
     <string name="total_listening_time">Total Listening Time</string>
-    <string name="unique_songs">Unique Songs</string>
-    <string name="unique_artists">Unique Artists</string>
-    <string name="unique_albums">Unique Albums</string>
-    <string name="selected_period">Selected Period</string>
-    <string name="hours_minutes_format">%1$dh %2$dm</string>
     <string name="default_open_tab">Default open tab</string>
     <string name="grid_cell_size">Grid cell size</string>
     <string name="small">Small</string>
@@ -311,9 +275,7 @@
     <string name="action_logout">Log out</string>
     <string name="action_login">Log in</string>
     <string name="login">Login</string>
-    <string name="show_audio_quality_badge">Show Music Quality badge</string>
     <string name="not_logged_in">Not logged in</string>
-    <string name="login_failed">Login failed</string>
 
     <string name="content_language">Default content language</string>
     <string name="content_country">Default content country</string>
@@ -323,7 +285,6 @@
     <string name="enable_proxy">Enable proxy</string>
     <string name="proxy_type">Proxy type</string>
     <string name="proxy_url">Proxy URL</string>
-    <string name="restart_to_take_effect">Restart to take effect</string>
 
     <string name="player_and_audio">Player and audio</string>
     <string name="audio_quality">Music Quality</string>
@@ -331,9 +292,6 @@
     <string name="ip_version_auto">Automatic</string>
     <string name="ip_version_ipv4">Forced IPv4</string>
     <string name="ip_version_ipv6">Forced IPv6</string>
-    <string name="audio_quality_auto">Auto</string>
-    <string name="audio_quality_high">High</string>
-    <string name="audio_quality_low">Low</string>
     <string name="queue">Queue</string>
     <string name="persistent_queue">Persistent queue</string>
     <string name="persistent_queue_desc">Restore your last queue when the app starts</string>
@@ -347,17 +305,14 @@
     <string name="equalizer">Equalizer</string>
 
     <string name="storage">Storage</string>
-    <string name="cache">Cache</string>
     <string name="image_cache">Image Cache</string>
     <string name="song_cache">Song Cache</string>
-    <string name="max_cache_size">Max cache size</string>
     <string name="unlimited">Unlimited</string>
     <string name="clear_all_downloads">Clear all downloads</string>
     <string name="max_image_cache_size">Max image cache size</string>
     <string name="clear_image_cache">Clear image cache</string>
     <string name="max_song_cache_size">Max song cache size</string>
     <string name="clear_song_cache">Clear song cache</string>
-    <string name="size_used">%s used</string>
 
     <string name="clear_downloaded_updates">Clear downloaded updates</string>
     <string name="clear_downloaded_updates_desc">Remove downloaded APK files to free up space</string>
@@ -371,8 +326,6 @@
     <string name="pause_search_history">Pause search history</string>
     <string name="clear_search_history">Clear search history</string>
     <string name="clear_search_history_confirm">Are you sure you want to clear all search history?</string>
-    <string name="use_login_for_browse">Use login for browsing content</string>
-    <string name="use_login_for_browse_desc">This can influence what content you see and for example shows premium-only albums if you are logged in with a Premium account</string>
     <string name="disable_screenshot">Disable screenshot</string>
     <string name="disable_screenshot_desc">When this option is on, screenshots and the app\'s view in Recents are disabled.</string>
     <string name="enable_lrclib">Enable LrcLib lyrics provider</string>
@@ -380,38 +333,26 @@
     <string name="hide_explicit">Hide explicit content</string>
 
     <string name="backup_restore">Backup and restore</string>
-    <string name="action_backup">Backup</string>
-    <string name="action_restore">Restore</string>
-    <string name="imported_playlist">Imported playlist</string>
     <string name="backup_create_success">Backup created successfully</string>
     <string name="backup_create_failed">Couldn\'t create backup</string>
     <string name="restore_failed">Failed to restore backup</string>
 
     <string name="discord_integration">Discord Integration</string>
-    <string name="discord_information">audicmusic uses the KizzyRPC library to set your Discord account\'s status. This involves using the Discord Gateway connection, which may be considered a violation of Discord\'s TOS. However, there are no known cases of user accounts being suspended for this reason. Use at your own risk.\n\audicmusic will only extract your token, and everything else is stored locally.</string>
     <string name="dismiss">Dismiss</string>
     <string name="options">Options</string>
     <string name="preview">Preview</string>
     <string name="enable_discord_rpc">Enable Rich Presence</string>
 
     <string name="about">About</string>
-    <string name="app_version">App version</string>
 
-    <string name="new_version_available">New version available</string>
-    <string name="translation_models">Translation Models</string>
-    <string name="clear_translation_models">Clear translation models</string>
     <string name="bluetooth_permission_required">Bluetooth permission is required to discover audio devices.</string>
-    <string name="streaming_to">Streaming to</string>
     <string name="this_phone">This phone</string>
     <string name="wired_headphones">Wired headphones</string>
     <string name="hdmi">HDMI</string>
     <string name="phone_speaker">Phone speaker</string>
     <string name="audio_quality_title">Music Quality</string>
-    <string name="battery_content_desc">Battery Level</string>
     <string name="done">Done</string>
     <string name="audio_devices">Audio devices</string>
-    <string name="bluetooth_headphones">Bluetooth headphones</string>
-    <string name="license">GNU General Public License v3.0</string>
     <string name="standard_lyrics_blur">Standard lyrics blur</string>
     <string name="listen_together_smart_resync">Smart Network Resync</string>
     <string name="listen_together_smart_resync_desc">Automatically catch up with the host after a connection drop</string>
@@ -471,8 +412,6 @@
     <!-- Audic Extractor Settings -->
     <string name="youtube_decryption_settings">Audic Extractor</string>
     <string name="youtube_decryption_desc">Configure extractor settings</string>
-    <string name="youtube_decryption_support">Audic Extractor</string>
-    <string name="youtube_decryption_support_desc">Automatically extracts YouTube playback configurations. Locked to Active.</string>
     <string name="force_update_cipher">Force Update Configurations</string>
     <string name="force_update_cipher_desc">Download the latest extractor override mappings. Limited to 3 updates per day.</string>
     <string name="youtube_decryption_info">Extractor mappings are fetched dynamically from your self-hosted node. The countdown at the top displays the time remaining until the next automatic synchronization check. If manual updates are requested more than 3 times, they are blocked for 1 day.</string>
@@ -481,9 +420,6 @@
     <string name="cipher_update_success">Extractor mappings updated! Loaded %d players.</string>
     <string name="cipher_update_failed">Failed to update extractor mappings: %s</string>
     <string name="cipher_updating">Updating extractor configurations…</string>
-    <string name="hours_label">Hours</string>
-    <string name="minutes_label">Minutes</string>
-    <string name="seconds_label">Seconds</string>
 
     <!-- Liquid Glass Effects -->
     <string name="liquid_glass">Liquid Glass (Beta)</string>
@@ -516,9 +452,6 @@
     <string name="liquid_glass_performance_warning">Rendering liquid glass is performance heavy and may reduce smoothness and battery life on some devices</string>
     <string name="liquid_glass_requires_floating_nav_bar">Requires the floating navigation bar to be enabled</string>
     <string name="color_picker_hex">Hex</string>
-    <string name="color_white">White</string>
-    <string name="color_light_gray">Light Gray</string>
-    <string name="color_black">Black</string>
     <string name="ai_auto_translate">Auto Translate</string>
     <string name="ai_auto_translate_desc">Automatically translate lyrics when available</string>
     <string name="lyrics_translation_menu">Lyrics Translation</string>

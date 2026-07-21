@@ -1,7 +1,6 @@
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
 package com.audic.music.ui.screens.settings
-
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.spring
@@ -89,7 +88,7 @@ highlightKey: String? = null) {
                     }
                 },
                 windowInsets = TopAppBarDefaults.windowInsets,
-                colors = TopAppBarDefaults.largeTopAppBarColors(
+                colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.surface,
                     scrolledContainerColor = MaterialTheme.colorScheme.surfaceContainer,
                 ),
@@ -119,19 +118,19 @@ highlightKey: String? = null) {
             }
 
             item {
-                AboutSectionCard(title = "Our Services") {
+                AboutSectionCard(title = "Connect") {
                     AboutActionRow(
-                        icon = painterResource(R.drawable.website),
-                        title = "Audic Canvas",
-                        subtitle = "canvas.echomusic.fun",
-                        onClick = { uriHandler.openUri("https://canvas.echomusic.fun/") },
+                        icon = painterResource(R.drawable.github),
+                        title = "GitHub",
+                        subtitle = "github.com/dindoquitor/audic",
+                        onClick = { uriHandler.openUri("https://github.com/dindoquitor/audic") },
                     )
                     AboutDivider()
                     AboutActionRow(
-                        icon = painterResource(R.drawable.website),
-                        title = "Audic Charts",
-                        subtitle = "charts.echomusic.fun",
-                        onClick = { uriHandler.openUri("https://charts.echomusic.fun/") },
+                        icon = painterResource(R.drawable.buymeacoffee),
+                        title = "Buy Me a Coffee",
+                        subtitle = "buymeacoffee.com/playpixelpro",
+                        onClick = { uriHandler.openUri("https://buymeacoffee.com/playpixelpro") },
                     )
                 }
             }
@@ -200,14 +199,13 @@ private fun AboutAppCard() {
             ) {
                 if (rotation <= 90f) {
                     Image(
-                        painter = painterResource(R.drawable.ic_launcher_nobg),
+                        painter = painterResource(R.drawable.ic_launcher_foreground),
                         contentDescription = null,
-                        colorFilter = ColorFilter.tint(if (isDark) Color.White else Color(0xFFEA3829)),
                         modifier = Modifier.fillMaxSize()
                     )
                 } else {
                     coil3.compose.AsyncImage(
-                        model = "https://avatars.githubusercontent.com/u/147871321?v=4",
+                        model = "https://avatars.githubusercontent.com/u/40767546?v=4",
                         contentDescription = null,
                         modifier = Modifier
                             .fillMaxSize()
