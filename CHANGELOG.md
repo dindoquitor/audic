@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.3
+
+- Fixed update notification link returning 404
+- Fixed in-app update downloading wrong APK variant
+- Improved APK selection to match device architecture and build flavor
+
 ## 1.0.2
 
 - Replace OPUS audio quality with HIGH and AUTO adaptive modes
