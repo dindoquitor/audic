@@ -333,8 +333,14 @@ fun UpdateScreen(navController: NavHostController) {
                                                 context.startActivity(installIntent)
                                             }
                                         } else {
-                                            val urlToDownload = currentStatus.apkUrl ?: "https://github.com/dindoquitor/audic/releases/download/${currentStatus.version}/audicmusic.apk"
-                                            
+                                            val urlToDownload = currentStatus.apkUrl
+                                            if (urlToDownload == null) {
+                                                scope.launch {
+                                                    snackbarHostState.showSnackbar(context.getString(R.string.cant_check_updates))
+                                                }
+                                                return@AnimatedActionButton
+                                            }
+
                                             val constraints = Constraints.Builder()
                                                 .setRequiredNetworkType(NetworkType.CONNECTED)
                                                 .build()
@@ -711,15 +717,45 @@ suspend fun checkForUpdate(
 
                 var apkSizeInMB = ""
                 var apkDownloadUrl = ""
+
+                // Collect all non-debug APKs and score by device match
+                data class ApkAsset(val name: String, val size: Long, val url: String)
+                val candidates = mutableListOf<ApkAsset>()
                 for (j in 0 until assets.length()) {
                     val asset = assets.getJSONObject(j)
                     val assetName = asset.getString("name")
                     if (assetName.endsWith(".apk", ignoreCase = true) && !assetName.lowercase().contains("debug")) {
-                        val apkSizeInBytes = asset.getLong("size")
-                        apkSizeInMB = String.format("%.1f", apkSizeInBytes / (1024.0 * 1024.0))
-                        apkDownloadUrl = asset.getString("browser_download_url")
-                        break
+                        candidates.add(ApkAsset(assetName, asset.getLong("size"), asset.getString("browser_download_url")))
                     }
+                }
+
+                if (candidates.isNotEmpty()) {
+                    val deviceAbis = Build.SUPPORTED_ABIS
+                    val isGms = BuildConfig.CAST_AVAILABLE
+                    fun scoreApk(name: String): Int {
+                        var s = 0
+                        val lower = name.lowercase()
+                        // Exact ABI match wins
+                        val abiKeywords = deviceAbis.flatMap { abi ->
+                            when {
+                                abi.startsWith("arm64") -> listOf("arm64")
+                                abi.startsWith("armeabi") -> listOf("armeabi")
+                                abi.startsWith("x86_64") -> listOf("x86_64")
+                                abi.startsWith("x86") -> listOf("x86")
+                                else -> emptyList()
+                            }
+                        }.distinct()
+                        if (abiKeywords.any { lower.contains(it) }) s += 3
+                        // Universal runs anywhere but isn't optimized
+                        if (lower.contains("universal")) s += 1
+                        // Variant match (Foss vs Gms)
+                        val assetIsGms = lower.contains("gms")
+                        if (isGms == assetIsGms) s += 2
+                        return s
+                    }
+                    val best = candidates.maxByOrNull { scoreApk(it.name) } ?: candidates.first()
+                    apkSizeInMB = String.format("%.1f", best.size / (1024.0 * 1024.0))
+                    apkDownloadUrl = best.url
                 }
 
                 if (apkDownloadUrl.isNotEmpty()) {

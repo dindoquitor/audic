@@ -18,7 +18,7 @@ object UpdateNotificationHelper {
     private const val CHANNEL_ID = "updates"
     private const val NOTIFICATION_ID = 1001
 
-    fun showUpdateNotification(context: Context, versionName: String) {
+    fun showUpdateNotification(context: Context, versionName: String, apkUrl: String) {
         val nm = context.getSystemService(NotificationManager::class.java)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -30,12 +30,6 @@ object UpdateNotificationHelper {
             nm.createNotificationChannel(channel)
         }
 
-        
-        val apkUrl = if (versionName.contains("nightly", ignoreCase = true)) {
-            "https://nightly.link/dindoquitor/workflows/nightly.yml/main/audicmusic-gms-nightly.zip"
-        } else {
-            "https://github.com/dindoquitor/audic/releases/download/$versionName/audicmusic.apk"
-        }
         val intent = Intent(Intent.ACTION_VIEW, apkUrl.toUri())
 
         val flags = PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
