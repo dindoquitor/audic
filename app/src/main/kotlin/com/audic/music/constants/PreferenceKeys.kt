@@ -103,7 +103,8 @@ val AudioQualityKey = stringPreferencesKey("audioQuality")
 val IpVersionKey = stringPreferencesKey("ipVersion")
 
 enum class AudioQuality {
-    OPUS,
+    HIGH,
+    AUTO,
 }
 
 val DownloadQualityKey = stringPreferencesKey("downloadQuality")

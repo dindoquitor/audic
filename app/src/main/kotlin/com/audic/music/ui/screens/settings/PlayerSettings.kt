@@ -92,7 +92,7 @@ highlightKey: String? = null) {
 
     val (audioQuality, onAudioQualityChange) = rememberEnumPreference(
         AudioQualityKey,
-        defaultValue = AudioQuality.OPUS
+        defaultValue = AudioQuality.HIGH
     )
     val (showAudioFallbackToast, onShowAudioFallbackToastChange) = rememberPreference(
         ShowAudioFallbackToastKey,
@@ -247,14 +247,18 @@ highlightKey: String? = null) {
             },
             title = stringResource(R.string.audio_quality),
             current = audioQuality,
-            values = listOf(AudioQuality.OPUS),
+            values = AudioQuality.entries.toList(),
             valueText = {
                 when (it) {
-                    AudioQuality.OPUS -> "Opus"
+                    AudioQuality.HIGH -> "High"
+                    AudioQuality.AUTO -> "Auto (Adaptive)"
                 }
             },
             valueDescription = {
-                ""
+                when (it) {
+                    AudioQuality.HIGH -> "Always stream the highest available bitrate"
+                    AudioQuality.AUTO -> "Automatically adjust quality based on network conditions"
+                }
             }
         )
     }
@@ -330,7 +334,8 @@ highlightKey: String? = null) {
                     description = {
                         Text(
                             when (audioQuality) {
-                                AudioQuality.OPUS -> "Opus"
+                                AudioQuality.HIGH -> "High"
+                                AudioQuality.AUTO -> "Auto (Adaptive)"
                             }
                         )
                     },

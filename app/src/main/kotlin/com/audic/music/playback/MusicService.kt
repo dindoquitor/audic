@@ -678,7 +678,7 @@ class MusicService :
 
         audioManager.registerAudioDeviceCallback(audioDeviceCallback, null)
 
-        audioQuality = dataStore.get(AudioQualityKey).toEnum(com.audic.music.constants.AudioQuality.OPUS)
+        audioQuality = dataStore.get(AudioQualityKey).toEnum(com.audic.music.constants.AudioQuality.HIGH)
         ipVersion = dataStore.get(IpVersionKey).toEnum(IpVersion.IPV4)
         playerVolume = MutableStateFlow(1f)
 
@@ -743,7 +743,7 @@ class MusicService :
             dataStore.data
                 .map { it[AudioQualityKey]?.let { value ->
                     com.audic.music.constants.AudioQuality.entries.find { it.name == value }
-                } ?: com.audic.music.constants.AudioQuality.OPUS }
+                } ?: com.audic.music.constants.AudioQuality.HIGH }
                 .distinctUntilChanged()
                 .collect { newQuality ->
                     val oldQuality = audioQuality
@@ -2900,7 +2900,7 @@ class MusicService :
             val isFullyDownloaded = cachedLength > 0 && downloadCache.isCached(mediaId, 0, cachedLength)
 
             val activeQualityInCache = songUrlCache.keys.find { it.startsWith("${mediaId}_") }?.substringAfter("_")?.let {
-                runCatching { com.audic.music.constants.AudioQuality.valueOf(it) }.getOrNull()
+                com.audic.music.constants.AudioQuality.entries.find { q -> q.name == it }
             }
             val lockedQuality = activeQualityInCache ?: audioQuality
 

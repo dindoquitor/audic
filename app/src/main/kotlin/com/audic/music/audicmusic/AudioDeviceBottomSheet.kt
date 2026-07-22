@@ -771,7 +771,7 @@ fun VolumeControlRow(
 fun AudioQualitySelector(context: Context) {
     val (audioQuality, onAudioQualityChange) = rememberEnumPreference(
         key = AudioQualityKey,
-        defaultValue = AudioQuality.OPUS
+        defaultValue = AudioQuality.HIGH
     )
 
     Column(
@@ -786,10 +786,8 @@ fun AudioQualitySelector(context: Context) {
                 .fillMaxWidth()
         )
 
-        val options = listOf(
-            "Opus"
-        )
-        val selectedIndex = 0
+        val options = AudioQuality.entries.toList()
+        val selectedIndex = options.indexOf(audioQuality).coerceAtLeast(0)
 
         androidx.compose.foundation.layout.FlowRow(
             modifier = Modifier
@@ -799,13 +797,12 @@ fun AudioQualitySelector(context: Context) {
             horizontalArrangement = Arrangement.spacedBy(ButtonGroupDefaults.ConnectedSpaceBetween),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            options.forEachIndexed { index, label ->
+            options.forEachIndexed { index, option ->
                 ToggleButton(
                     checked = selectedIndex == index,
                     onCheckedChange = {
-                        val newQuality = AudioQuality.OPUS
-                        onAudioQualityChange(newQuality)
-                        applyAudioQuality(context, newQuality)
+                        onAudioQualityChange(option)
+                        applyAudioQuality(context, option)
                     },
                     modifier = Modifier
                         .weight(1f)
@@ -813,7 +810,10 @@ fun AudioQualitySelector(context: Context) {
                         .semantics { role = Role.RadioButton }
                 ) {
                     Text(
-                        text = label,
+                        text = when (option) {
+                            AudioQuality.HIGH -> "High"
+                            AudioQuality.AUTO -> "Auto"
+                        },
                         style = MaterialTheme.typography.bodyMedium
                     )
                 }

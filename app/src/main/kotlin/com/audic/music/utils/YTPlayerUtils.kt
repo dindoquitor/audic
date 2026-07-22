@@ -3,6 +3,7 @@
 package com.audic.music.utils
 
 import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.util.Log
 import androidx.media3.common.PlaybackException
 import com.music.innertube.NewPipeExtractor
@@ -504,6 +505,27 @@ object YTPlayerUtils {
             .onFailure { Timber.tag(logTag).e(it, "Failed to fetch metadata") }
     }
 
+    private enum class NetworkQuality { EXCELLENT, GOOD, MODERATE, POOR }
+
+    private fun getNetworkQuality(connectivityManager: ConnectivityManager): NetworkQuality {
+        val activeNetwork = connectivityManager.activeNetwork ?: return NetworkQuality.GOOD
+        val caps = connectivityManager.getNetworkCapabilities(activeNetwork) ?: return NetworkQuality.GOOD
+
+        // Unmetered connections (WiFi/Ethernet) get the best quality
+        if (caps.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
+            caps.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)) {
+            return NetworkQuality.EXCELLENT
+        }
+
+        // Metered — use bandwidth estimate to gauge speed
+        val bandwidthKbps = caps.getLinkDownstreamBandwidthKbps()
+        return when {
+            bandwidthKbps >= 2000 -> NetworkQuality.GOOD   // fast mobile (5G/LTE)
+            bandwidthKbps >= 500  -> NetworkQuality.MODERATE // moderate (3G/weak LTE)
+            else                  -> NetworkQuality.POOR     // slow (2G/edge)
+        }
+    }
+
     private fun findFormat(
         playerResponse: PlayerResponse,
         audioQuality: AudioQuality,
@@ -511,13 +533,35 @@ object YTPlayerUtils {
     ): PlayerResponse.StreamingData.Format? {
         Timber.tag(logTag).d("Finding format with audioQuality: $audioQuality, network metered: ${connectivityManager.isActiveNetworkMetered}")
 
-        val format = playerResponse.streamingData?.adaptiveFormats
-            ?.filter { it.isAudio && it.isOriginal }
-            ?.maxByOrNull {
-                it.bitrate * when (audioQuality) {
-                    AudioQuality.OPUS -> 1
-                } + (if (it.mimeType.startsWith("audio/webm")) 10240 else 0) 
+        val formats = playerResponse.streamingData?.adaptiveFormats
+            ?.filter { it.isAudio && it.isOriginal } ?: return null
+
+        val format = when (audioQuality) {
+            AudioQuality.HIGH -> formats.maxByOrNull {
+                it.bitrate + (if (it.mimeType.startsWith("audio/webm")) 10240 else 0)
             }
+            AudioQuality.AUTO -> {
+                val networkQuality = getNetworkQuality(connectivityManager)
+                Timber.tag(logTag).d("Auto mode: network quality = $networkQuality")
+                when (networkQuality) {
+                    NetworkQuality.EXCELLENT, NetworkQuality.GOOD -> formats.maxByOrNull {
+                        it.bitrate + (if (it.mimeType.startsWith("audio/webm")) 10240 else 0)
+                    }
+                    NetworkQuality.MODERATE -> {
+                        // Target mid-range bitrates (64–160 kbps) to balance quality and bandwidth
+                        val mid = formats.filter { it.bitrate in 64_000..160_000 }
+                        mid.maxByOrNull { it.bitrate + (if (it.mimeType.startsWith("audio/webm")) 10240 else 0) }
+                            ?: formats.maxByOrNull { it.bitrate }
+                    }
+                    NetworkQuality.POOR -> {
+                        // Low bitrates only to avoid buffering on weak connections
+                        val low = formats.filter { it.bitrate <= 80_000 }
+                        low.maxByOrNull { it.bitrate + (if (it.mimeType.startsWith("audio/webm")) 10240 else 0) }
+                            ?: formats.minByOrNull { it.bitrate }
+                    }
+                }
+            }
+        }
 
         if (format != null) {
             Timber.tag(logTag).d("Selected format: ${format.mimeType}, bitrate: ${format.bitrate}")
