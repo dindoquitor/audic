@@ -265,11 +265,6 @@ object YTPlayerUtils {
         }
 
         
-        if (mainPlayerResponse == null) {
-            throw Exception("Failed to get player response")
-        }
-
-        
         
         val audioConfig = metadataResponse?.playerConfig?.audioConfig ?: mainPlayerResponse.playerConfig?.audioConfig
         val videoDetails = metadataResponse?.videoDetails ?: mainPlayerResponse.videoDetails
@@ -398,19 +393,17 @@ object YTPlayerUtils {
                 // Always apply n-transform if URL contains n= parameter.
                 // YouTube throttling with the n= param now affects ALL client types (ANDROID_VR,
                 // IOS, etc.) — not just web clients. If we don't transform it, ExoPlayer gets 403.
-                if (streamUrl != null) {
-                    val nMatch = Regex("[?&]n=").find(streamUrl)
-                    if (nMatch != null) {
-                        try {
-                            Timber.tag(logTag).d("Applying n-transform (n= detected in URL)")
-                            val transformed = EjsNTransformSolver.transformNParamInUrl(streamUrl)
-                            if (transformed != streamUrl) {
-                                streamUrl = transformed
-                                Timber.tag(logTag).d("N-transform applied successfully")
-                            }
-                        } catch (e: Exception) {
-                            Timber.tag(logTag).e(e, "N-transform failed: ${e.message}")
+                val nMatch = Regex("[?&]n=").find(streamUrl)
+                if (nMatch != null) {
+                    try {
+                        Timber.tag(logTag).d("Applying n-transform (n= detected in URL)")
+                        val transformed = EjsNTransformSolver.transformNParamInUrl(streamUrl)
+                        if (transformed != streamUrl) {
+                            streamUrl = transformed
+                            Timber.tag(logTag).d("N-transform applied successfully")
                         }
+                    } catch (e: Exception) {
+                        Timber.tag(logTag).e(e, "N-transform failed: ${e.message}")
                     }
                 }
 
@@ -418,7 +411,7 @@ object YTPlayerUtils {
                 // Non-web clients (ANDROID_VR, IOS) don't use this parameter.
                 if (currentClient.useWebPoTokens && poToken?.streamingDataPoToken != null) {
                     Timber.tag(logTag).d("Appending pot= parameter to stream URL")
-                    val separator = if ("?" in streamUrl!!) "&" else "?"
+                    val separator = if ("?" in streamUrl) "&" else "?"
                     streamUrl = "${streamUrl}${separator}pot=${poToken.streamingDataPoToken}"
                 }
 

@@ -3,8 +3,6 @@ package com.audic.music.audicmusic.changelog
 
 
 import android.content.Context
-import android.content.Intent
-import android.net.Uri
 import android.util.Log
 import androidx.compose.animation.core.LinearOutSlowInEasing
 import androidx.compose.foundation.background
@@ -28,7 +26,6 @@ import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Error
@@ -77,7 +74,6 @@ import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import com.audic.music.BuildConfig
@@ -153,9 +149,9 @@ fun ChangelogScreen(
                         val changelogJson = connection.inputStream.bufferedReader().use { it.readText() }
                         val changelogData = JSONObject(changelogJson)
                         
-                        val desc = changelogData.optString("description", null)
-                        val imageUrl = changelogData.optString("image", null)
-                        val warning = changelogData.optString("warning", null)
+                        val desc = changelogData.optString("description", "").takeIf { it.isNotBlank() }
+                        val imageUrl = changelogData.optString("image", "").takeIf { it.isNotBlank() }
+                        val warning = changelogData.optString("warning", "").takeIf { it.isNotBlank() }
                         val changelogArray = changelogData.optJSONArray("changelog")
                         
                         val sections = mutableListOf<ChangelogSection>()
@@ -425,13 +421,8 @@ fun ChangelogScreen(
                                             val annotatedText = item.trim().parseMarkdown()
                                             Row(modifier = Modifier.padding(vertical = 4.dp), verticalAlignment = Alignment.Top, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                                                 Box(modifier = Modifier.padding(top = 8.dp).size(6.dp).background(MaterialTheme.colorScheme.primary, CircleShape))
-                                                ClickableText(
+                                                Text(
                                                     text = annotatedText,
-                                                    onClick = { offset ->
-                                                        annotatedText.getStringAnnotations("URL", offset, offset).firstOrNull()?.let {
-                                                            ContextCompat.startActivity(context, Intent(Intent.ACTION_VIEW, Uri.parse(it.item)), null)
-                                                        }
-                                                    },
                                                     style = MaterialTheme.typography.bodyLarge.copy(color = MaterialTheme.colorScheme.onSurface)
                                                 )
                                             }
@@ -528,9 +519,9 @@ private fun loadChangelogFromCache(context: Context, versionTag: String): Cached
         
         CachedChangelogData(
             sections = sections,
-            image = cacheData.optString("image", null).takeIf { !it.isNullOrBlank() },
-            description = cacheData.optString("description", null).takeIf { !it.isNullOrBlank() },
-            warning = cacheData.optString("warning", null).takeIf { !it.isNullOrBlank() }
+            image = cacheData.optString("image", "").takeIf { it.isNotBlank() },
+            description = cacheData.optString("description", "").takeIf { it.isNotBlank() },
+            warning = cacheData.optString("warning", "").takeIf { it.isNotBlank() }
         )
     } catch (e: Exception) { null }
 }

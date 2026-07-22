@@ -152,6 +152,7 @@ enum class AudioDeviceType {
 }
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
+@Suppress("DEPRECATION")
 @Composable
 fun AudioDeviceBottomSheet(onDismiss: () -> Unit, modifier: Modifier = Modifier) {
     val context = LocalContext.current
@@ -617,6 +618,7 @@ fun AudioDeviceBottomSheet(onDismiss: () -> Unit, modifier: Modifier = Modifier)
 }
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
+@Suppress("DEPRECATION")
 @Composable
 fun VolumeControlRow(
     label: String,
@@ -1064,6 +1066,7 @@ private fun checkBluetoothPermission(context: Context): Boolean = if (Build.VERS
     ) == PackageManager.PERMISSION_GRANTED
 } else true
 
+@Suppress("DEPRECATION")
 @Composable
 private fun AudioDeviceRow(
     device: AudioDevice,

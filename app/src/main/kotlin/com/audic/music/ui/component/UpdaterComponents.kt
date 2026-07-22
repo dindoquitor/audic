@@ -36,15 +36,11 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.Alignment
-import android.content.Intent
-import android.net.Uri
-import androidx.compose.foundation.text.ClickableText
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.LinkAnnotation
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.withStyle
-import androidx.core.content.ContextCompat
 import com.audic.music.audicmusic.updater.extractUrls
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontFamily
@@ -227,7 +223,7 @@ fun String.parseMarkdown(): androidx.compose.ui.text.AnnotatedString {
                 )) {
                     append(text)
                 }
-                builder.addStringAnnotation("URL", url, startIndex, builder.length)
+                builder.addLink(LinkAnnotation.Url(url), startIndex, builder.length)
             }
             match.groups[10] != null -> { // bare url
                 val url = match.groups[10]!!.value
@@ -239,7 +235,7 @@ fun String.parseMarkdown(): androidx.compose.ui.text.AnnotatedString {
                 )) {
                     append(url)
                 }
-                builder.addStringAnnotation("URL", fullUrl, startIndex, builder.length)
+                builder.addLink(LinkAnnotation.Url(fullUrl), startIndex, builder.length)
             }
         }
         currentIndex = match.range.last + 1
@@ -263,7 +259,6 @@ fun ChangelogItem(
         shape = shape,
         color = MaterialTheme.colorScheme.surfaceContainerHigh
     ) {
-        val context = LocalContext.current
         val annotatedText = text.parseMarkdown()
 
         androidx.compose.foundation.layout.Row(
@@ -276,13 +271,8 @@ fun ChangelogItem(
                     .background(MaterialTheme.colorScheme.primary, RoundedCornerShape(50))
             )
             androidx.compose.foundation.layout.Spacer(modifier = Modifier.size(16.dp))
-            ClickableText(
+            Text(
                 text = annotatedText,
-                onClick = { offset ->
-                    annotatedText.getStringAnnotations("URL", offset, offset).firstOrNull()?.let {
-                        ContextCompat.startActivity(context, Intent(Intent.ACTION_VIEW, Uri.parse(it.item)), null)
-                    }
-                },
                 style = MaterialTheme.typography.bodyMedium.copy(color = MaterialTheme.colorScheme.onSurface)
             )
         }

@@ -5,7 +5,7 @@
     "kind": "Directory"
   },
   "applicationId": "com.audic.music",
-  "variantName": "arm64FossRelease",
+  "variantName": "x86_64GmsRelease",
   "elements": [
     {
       "type": "SINGLE",
@@ -13,7 +13,7 @@
       "attributes": [],
       "versionCode": 3,
       "versionName": "1.0.2",
-      "outputFile": "app-arm64-foss-release.apk"
+      "outputFile": "app-x86_64-gms-release.apk"
     }
   ],
   "elementType": "File",
@@ -22,14 +22,14 @@
       "minApi": 28,
       "maxApi": 30,
       "baselineProfiles": [
-        "baselineProfiles/1/app-arm64-foss-release.dm"
+        "baselineProfiles/1/app-x86_64-gms-release.dm"
       ]
     },
     {
       "minApi": 31,
       "maxApi": 2147483647,
       "baselineProfiles": [
-        "baselineProfiles/0/app-arm64-foss-release.dm"
+        "baselineProfiles/0/app-x86_64-gms-release.dm"
       ]
     }
   ],
