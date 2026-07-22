@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.4
+
+- Set default music streaming cache to unlimited (was 1GB)
+- Set default image cache to 4GB (was 512MB)
+- Fresh installs get the new limits; existing users keep their current settings
+
 ## 1.0.3
 
 - Fixed update notification link returning 404
