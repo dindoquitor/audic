@@ -6,6 +6,7 @@
 - Add network-aware adaptive bitrate selection for AUTO quality
 - Dynamic audio quality selector in settings and player UI
 - Fix release APK naming to Audic-<version>-<variant>.apk
+- Fix compiler warnings and deprecated API usage
 
 ## 1.0.1
 
