@@ -102,7 +102,7 @@ object AppModule {
         @ApplicationContext context: Context,
         databaseProvider: DatabaseProvider,
     ): SimpleCache {
-        val cacheSize = context.dataStore[MaxSongCacheSizeKey] ?: 1024
+        val cacheSize = context.dataStore[MaxSongCacheSizeKey] ?: -1
         return SimpleCache(
             context.filesDir.resolve("exoplayer"),
             when (cacheSize) {

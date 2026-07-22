@@ -92,11 +92,11 @@ fun StorageSettings(
     val imageCacheString = stringResource(R.string.image_cache).lowercase()
     val (maxImageCacheSize, onMaxImageCacheSizeChange) = rememberPreference(
         key = MaxImageCacheSizeKey,
-        defaultValue = 512
+        defaultValue = 4096
     )
     val (maxSongCacheSize, onMaxSongCacheSizeChange) = rememberPreference(
         key = MaxSongCacheSizeKey,
-        defaultValue = 1024
+        defaultValue = -1
     )
     val (exportDirectoryUri, onExportDirectoryUriChange) = rememberPreference(
         key = ExportDirectoryUriKey,

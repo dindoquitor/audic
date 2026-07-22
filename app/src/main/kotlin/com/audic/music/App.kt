@@ -87,7 +87,7 @@ class App : Application(), SingletonImageLoader.Factory {
         }
 
         applicationScope.launch(Dispatchers.IO) {
-            cachedCoilCacheSize = dataStore.data.map { it[MaxImageCacheSizeKey] ?: 512 }.first()
+            cachedCoilCacheSize = dataStore.data.map { it[MaxImageCacheSizeKey] ?: 4096 }.first()
         }
 
         applicationScope.launch {
@@ -248,7 +248,7 @@ class App : Application(), SingletonImageLoader.Factory {
 
     override fun newImageLoader(context: PlatformContext): ImageLoader {
         val cacheSize = cachedCoilCacheSize ?: runBlocking {
-            dataStore.data.map { it[MaxImageCacheSizeKey] ?: 512 }.first()
+            dataStore.data.map { it[MaxImageCacheSizeKey] ?: 4096 }.first()
         }
         return ImageLoader.Builder(this).apply {
             crossfade(true)
