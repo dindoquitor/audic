@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.5
+
+- Cache artwork to local files for offline playback of downloaded songs
+- Auto-fetch and persist lyrics when downloads complete
+- Restore three-dot options menu alongside download button on player
+- Wire Last.fm love/unlove to heart button (enabled via settings)
+- Enable export-as-MP3 by default in player menu
+- Fix audio export with foreground notification and range header
+- Add @Transaction annotations to playlist DAO queries
+
 ## 1.0.4
 
 - Set default music streaming cache to unlimited (was 1GB)
