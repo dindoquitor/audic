@@ -112,7 +112,7 @@ class MusicDatabase(
         SortedSongAlbumMap::class,
         PlaylistSongMapPreview::class,
     ],
-    version = 42,
+    version = 43,
     exportSchema = true,
     autoMigrations = [
         AutoMigration(from = 2, to = 3),
@@ -178,6 +178,7 @@ abstract class InternalDatabase : RoomDatabase() {
                             MIGRATION_39_40,
                             MIGRATION_40_41,
                             MIGRATION_41_42,
+                            MIGRATION_42_43,
                         )
                         .setJournalMode(RoomDatabase.JournalMode.WRITE_AHEAD_LOGGING)
                         .setTransactionExecutor(java.util.concurrent.Executors.newFixedThreadPool(4))
@@ -953,5 +954,11 @@ class Migration41To42 : AutoMigrationSpec
 val MIGRATION_41_42 = object : Migration(41, 42) {
     override fun migrate(db: SupportSQLiteDatabase) {
         // Handled by AutoMigration
+    }
+}
+
+val MIGRATION_42_43 = object : Migration(42, 43) {
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL("ALTER TABLE song ADD COLUMN localArtworkPath TEXT DEFAULT NULL")
     }
 }

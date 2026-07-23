@@ -1611,6 +1611,44 @@ fun BottomSheetPlayer(
                         horizontalArrangement = Arrangement.spacedBy(6.dp),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
+                        AnimatedContent(targetState = showInlineLyrics, label = "MenuButton") { showLyrics ->
+                            if (showLyrics) {
+                                Box(modifier = Modifier.size(42.dp))
+                            } else {
+                                FilledIconButton(
+                                    onClick = {
+                                        menuState.show {
+                                            PlayerMenu(
+                                                mediaMetadata = mediaMetadata,
+                                                navController = navController,
+                                                playerBottomSheetState = state,
+                                                onShowDetailsDialog = {
+                                                    mediaMetadata.id.let {
+                                                        bottomSheetPageState.show {
+                                                            ShowMediaInfo(it)
+                                                        }
+                                                    }
+                                                },
+                                                onDismiss = menuState::dismiss,
+                                            )
+                                        }
+                                    },
+                                    shape = RoundedCornerShape(24.dp),
+                                    colors = IconButtonDefaults.filledIconButtonColors(
+                                        containerColor = textButtonColor,
+                                        contentColor = iconButtonColor,
+                                    ),
+                                    modifier = Modifier.size(42.dp),
+                                ) {
+                                    Icon(
+                                        painter = painterResource(R.drawable.more_vert),
+                                        contentDescription = null,
+                                        modifier = Modifier.size(24.dp),
+                                    )
+                                }
+                            }
+                        }
+
                         AnimatedContent(targetState = showInlineLyrics, label = "DownloadButton") { showLyrics ->
                             if (showLyrics) {
                                 FilledIconButton(

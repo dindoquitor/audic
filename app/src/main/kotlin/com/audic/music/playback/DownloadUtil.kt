@@ -28,6 +28,9 @@ import java.net.InetAddress
 import java.net.Inet4Address
 import java.net.Inet6Address
 import com.audic.music.db.MusicDatabase
+import com.audic.music.lyrics.LyricsHelper
+import com.audic.music.db.entities.LyricsEntity
+import com.audic.music.models.MediaMetadata
 import com.audic.music.db.entities.FormatEntity
 import com.audic.music.db.entities.SongEntity
 import com.audic.music.di.DownloadCache
@@ -44,11 +47,16 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import okhttp3.OkHttpClient
+import okhttp3.Request
+import timber.log.Timber
+import java.io.File
+import java.io.FileOutputStream
 import java.time.LocalDateTime
 import java.util.concurrent.Executors
 import javax.inject.Inject
@@ -58,13 +66,16 @@ import javax.inject.Singleton
 class DownloadUtil
 @Inject
 constructor(
-    @ApplicationContext context: Context,
+    @ApplicationContext val context: Context,
     val database: MusicDatabase,
     val databaseProvider: DatabaseProvider,
     @DownloadCache val downloadCache: SimpleCache,
     @PlayerCache val playerCache: SimpleCache,
+    private val lyricsHelper: LyricsHelper,
 ) {
     private val connectivityManager = context.getSystemService<ConnectivityManager>()!!
+    private val artworkDir = context.filesDir.resolve("artwork").also { it.mkdirs() }
+    private val httpClient = OkHttpClient()
     private val downloadQuality by enumPreference(context, com.audic.music.constants.DownloadQualityKey, com.audic.music.constants.DownloadQuality.YOUTUBE)
     private val ipVersion by enumPreference(context, IpVersionKey, IpVersion.IPV4)
     private val songUrlCache = HashMap<String, Pair<String, Long>>()
@@ -199,6 +210,7 @@ constructor(
                             when (download.state) {
                                 Download.STATE_COMPLETED -> {
                                     database.updateDownloadedInfo(download.request.id, true, LocalDateTime.now())
+                                    cacheArtworkAndLyrics(download.request.id)
                                 }
                                 Download.STATE_FAILED,
                                 Download.STATE_STOPPED,
@@ -225,6 +237,57 @@ constructor(
     }
 
     fun getDownload(songId: String): Flow<Download?> = downloads.map { it[songId] }
+
+    private suspend fun cacheArtworkAndLyrics(songId: String) {
+        // Save thumbnail to local file
+        val song = database.song(songId).firstOrNull()
+        val thumbnailUrl = song?.song?.thumbnailUrl
+        if (thumbnailUrl != null && !thumbnailUrl.startsWith("file://") && !thumbnailUrl.startsWith("content://")) {
+            try {
+                val localFile = File(artworkDir, "${songId}.jpg")
+                val request = Request.Builder().url(thumbnailUrl).build()
+                val response = httpClient.newCall(request).execute()
+                if (response.isSuccessful) {
+                    response.body?.byteStream()?.use { input ->
+                        FileOutputStream(localFile).use { output ->
+                            input.copyTo(output)
+                        }
+                    }
+                    database.query { update(song.song.copy(localArtworkPath = localFile.toURI().toString())) }
+                }
+            } catch (e: Exception) {
+                Timber.e(e, "Failed to cache artwork for $songId")
+            }
+        }
+
+        // Fetch and persist lyrics
+        if (song != null) {
+            try {
+                val mediaMetadata = MediaMetadata(
+                    id = songId,
+                    title = song.song.title,
+                    artists = song.artists.map { MediaMetadata.Artist(it.id, it.name) },
+                    duration = song.song.duration,
+                    album = song.album?.let { MediaMetadata.Album(it.id, it.title) },
+                    thumbnailUrl = thumbnailUrl,
+                )
+                val lyricsResult = lyricsHelper.getLyrics(mediaMetadata)
+                if (lyricsResult.lyrics != LyricsEntity.LYRICS_NOT_FOUND && lyricsResult.lyrics.isNotBlank()) {
+                    database.query {
+                        upsert(
+                            LyricsEntity(
+                                id = songId,
+                                lyrics = lyricsResult.lyrics,
+                                provider = lyricsResult.provider,
+                            )
+                        )
+                    }
+                }
+            } catch (e: Exception) {
+                Timber.e(e, "Failed to cache lyrics for $songId")
+            }
+        }
+    }
 
     fun release() {
         scope.cancel()

@@ -170,6 +170,7 @@ import com.audic.music.utils.CoilBitmapLoader
 import com.audic.music.ui.screens.settings.DiscordPresenceManager
 import com.audic.music.utils.NetworkConnectivityObserver
 import com.audic.music.utils.ScrobbleManager
+import com.music.audic.utils.lastfm.LastFM
 import com.audic.music.utils.SyncUtils
 import com.audic.music.utils.YTPlayerUtils
 import com.audic.music.utils.dataStore
@@ -1854,6 +1855,15 @@ class MusicService :
                         )
                     }
                 }
+
+
+                if (dataStore.get(LastFMUseSendLikes, false) && LastFM.isInitialized()) {
+                    val artists = it.artists.joinToString(", ") { a -> a.name }
+                    if (artists.isNotBlank()) {
+                        LastFM.setLoveStatus(artists, song.title, song.liked)
+                    }
+                }
+
                 currentMediaMetadata.value = player.currentMetadata
             }
         }

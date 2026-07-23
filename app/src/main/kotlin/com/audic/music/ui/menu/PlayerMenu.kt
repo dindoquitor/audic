@@ -167,7 +167,7 @@ fun PlayerMenu(
         mutableStateOf(false)
     }
     
-    val (enableExportAsMp3) = rememberPreference(key = EnableExportAsMp3Key, defaultValue = false)
+    val (enableExportAsMp3) = rememberPreference(key = EnableExportAsMp3Key, defaultValue = true)
     val (exportDirectoryUri) = rememberPreference(key = ExportDirectoryUriKey, defaultValue = "")
     val (exportingSongIds) = rememberPreference(key = ExportingSongIdsKey, defaultValue = "")
     val (exportedSongIds) = rememberPreference(key = ExportedSongIdsKey, defaultValue = "")

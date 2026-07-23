@@ -1,11 +1,16 @@
 package com.audic.music.playback
 
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.Uri
+import android.os.Build
 import android.os.IBinder
+import androidx.core.app.NotificationCompat
 import androidx.core.content.getSystemService
 import androidx.documentfile.provider.DocumentFile
 import androidx.media3.common.MediaItem
@@ -13,6 +18,7 @@ import androidx.media3.common.MimeTypes
 import androidx.media3.transformer.Transformer
 import com.music.innertube.YouTube
 import com.audic.music.constants.AudioQuality
+import com.audic.music.R
 import com.audic.music.constants.ExportingSongIdsKey
 import com.audic.music.constants.ExportedSongIdsKey
 import com.audic.music.utils.YTPlayerUtils
@@ -24,6 +30,7 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.suspendCancellableCoroutine
+import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import timber.log.Timber
@@ -35,9 +42,23 @@ class AudioExportService : Service() {
     private val serviceScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
     private val httpClient = OkHttpClient()
 
+    override fun onCreate() {
+        super.onCreate()
+        createNotificationChannel()
+    }
+
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         val songId = intent?.getStringExtra(EXTRA_SONG_ID) ?: return START_NOT_STICKY
         val songTitle = intent.getStringExtra(EXTRA_SONG_TITLE).orEmpty()
+
+        val notification: Notification = NotificationCompat.Builder(this, EXPORT_CHANNEL_ID)
+            .setContentTitle(getString(R.string.exporting))
+            .setContentText(songTitle.ifBlank { songId })
+            .setSmallIcon(R.drawable.file_export)
+            .setOngoing(true)
+            .build()
+        startForeground(EXPORT_NOTIFICATION_ID, notification)
+
         val songArtist = intent.getStringExtra(EXTRA_SONG_ARTIST).orEmpty()
         val songAlbum = intent.getStringExtra(EXTRA_SONG_ALBUM).orEmpty()
         val artworkUrl = intent.getStringExtra(EXTRA_ARTWORK_URL).orEmpty()
@@ -54,6 +75,17 @@ class AudioExportService : Service() {
             )
         }
         return START_NOT_STICKY
+    }
+
+    private fun createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(
+                EXPORT_CHANNEL_ID,
+                getString(R.string.export_desc),
+                NotificationManager.IMPORTANCE_LOW
+            )
+            getSystemService(NotificationManager::class.java).createNotificationChannel(channel)
+        }
     }
 
     private suspend fun exportSong(
@@ -96,12 +128,19 @@ class AudioExportService : Service() {
             addExportedSongId(songId)
         } catch (e: Exception) {
             Timber.e(e, "Export failed for songId=$songId")
+            withContext(Dispatchers.Main) {
+                android.widget.Toast.makeText(
+                    this@AudioExportService,
+                    "Export failed: ${e.message}",
+                    android.widget.Toast.LENGTH_LONG
+                ).show()
+            }
         } finally {
-
             tempSourceFile.delete()
             tempArtworkFile.delete()
             tempMp3File.delete()
             removeExportingSongId(songId)
+            stopForeground(STOP_FOREGROUND_REMOVE)
             stopSelf()
         }
     }
@@ -116,8 +155,9 @@ class AudioExportService : Service() {
         destFile: File,
     ) {
         val totalLength = playbackData.format.contentLength ?: 10_000_000L
-        val rangedUrl = "${playbackData.streamUrl}&range=0-$totalLength"
-        val request = Request.Builder().url(rangedUrl).build()
+        val request = Request.Builder().url(playbackData.streamUrl)
+            .header("Range", "bytes=0-$totalLength")
+            .build()
         var totalBytes = -1L
         var bytesWritten = 0L
 
@@ -276,6 +316,8 @@ class AudioExportService : Service() {
         private const val EXTRA_SONG_ALBUM = "extra_song_album"
         private const val EXTRA_ARTWORK_URL = "extra_artwork_url"
         private const val EXTRA_TARGET_DIRECTORY_URI = "extra_target_directory_uri"
+        private const val EXPORT_CHANNEL_ID = "audio_export"
+        private const val EXPORT_NOTIFICATION_ID = 2
 
         fun start(
             context: Context,

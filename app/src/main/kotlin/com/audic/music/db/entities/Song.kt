@@ -57,6 +57,10 @@ constructor(
                     return "content://media/external/audio/albumart/$mediaStoreAlbumId"
                 }
             }
+            // Prefer locally-cached artwork for downloaded songs — works offline
+            if (song.isDownloaded && song.localArtworkPath != null) {
+                return song.localArtworkPath
+            }
             return song.thumbnailUrl
         }
     val romanizeLyrics: Boolean
